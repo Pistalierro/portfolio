@@ -54,7 +54,7 @@
               }
             ],
             "styles": [
-              "src/styles/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
