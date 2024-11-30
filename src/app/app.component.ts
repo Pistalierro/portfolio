@@ -1,13 +1,15 @@
 import {Component, HostListener} from '@angular/core';
 import {HeaderComponent} from './components/layouts/header/header.component';
 import {AboutComponent} from './components/sections/about/about.component';
+import {MenuComponent} from './components/sections/menu/menu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    MenuComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

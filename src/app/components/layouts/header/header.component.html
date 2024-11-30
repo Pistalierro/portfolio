@@ -3,22 +3,20 @@
   <div class="absolute inset-0 animate-background bg-cover bg-center" style="background-image: inherit;"></div>
   <div class="container relative px-4 text-white mx-auto flex flex-col items-center justify-center h-screen gap-y-12">
 
-    <nav class="absolute top-0 right-0 left-0 py-2 px-4 z-10 flex items-center justify-between">
-      <div>
-        <img alt="logo" class="h-16" src="/logos/AG_logo_500x500_white.png">
+    <nav class="absolute flex gap-4 items-center justify-between top-0 right-0 left-0 py-2 px-4 z-10">
+
+      <div class="navbar-image">
+        <img alt="logo" class="h-12 md:h-16" src="/logos/AG_logo_500x500_white.png">
       </div>
 
-      <div class="md:hidden  absolute top-6 right-0">
-        <button (click)="mobileMenuService.toggleMobileMenu()" class="text-white focus:outline-none">
-          <!-- Меню закрыто - иконка гамбургера -->
+      <div class="md:hidden navbar-toggle pt-2">
+        <button (click)="toggleMobileMenu()">
           <svg *ngIf="!mobileMenuService.isMobileMenuOpen" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                xmlns="http://www.w3.org/2000/svg">
             <path d="M4 6h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
             <path d="M4 12h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
             <path d="M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           </svg>
-
-          <!-- Меню открыто - иконка крестика -->
           <svg *ngIf="mobileMenuService.isMobileMenuOpen" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                xmlns="http://www.w3.org/2000/svg">
             <path d="M6 6L18 18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -27,25 +25,40 @@
         </button>
       </div>
 
-      <div>
-        <ul class="hidden md:flex items-center space-x-8">
-          <li *ngFor="let item of menuItems">
+      <div class="hidden md:flex space-x-4 md:space-x-8 navbar-list">
+        <ul *ngFor="let item of menuItems" class="flex -mt-4">
+          <li>
             <a (click)="smoothScrollService.scrollToSection(item.sectionID)"
-               class="font-pangolin text-xl -mt-4 hover:text-shadow-strong duration-200 hover:cursor-pointer">
+               class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
               <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
             </a>
           </li>
         </ul>
-
-        <ul *ngIf="mobileMenuService.isMobileMenuOpen"
-            class="absolute p-6  top-20  -right-16 text-xl -left-16 font-pangolin bg-black bg-opacity-60 h-auto flex flex-col md:hidden items-center gap-6">
-          <li *ngFor="let item of menuItems">
-            <a (click)="smoothScrollService.scrollToSection(item.sectionID)">
-              <i *ngIf="item.icon" [ngClass]="item.icon"></i> {{ item.label }}</a>
-          </li>
-        </ul>
       </div>
     </nav>
+
+    <div #mobileMenuContainer
+         class="menu-container absolute top-16 space-y-4 py-4 text-center -right-8 -left-8 bg-black bg-opacity-60 z-20">
+      <ul *ngFor="let item of menuItems">
+        <li>
+          <a (click)="closeMobileMenu(item.sectionID)"
+             class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
+            <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!--    <div #mobileMenuContainer-->
+    <!--         class="menu-container absolute top-16 -right-16 -left-16 bg-black bg-opacity-70 shadow-lg text-white text-center z-10">-->
+    <!--      <ul class="space-y-4 font-heading p-4">-->
+    <!--        <li *ngFor="let item of menuItems">-->
+    <!--          <a (click)="closeMobileMenu(item.sectionID)" class="text-xl font-medium hover:text-shadow-strong duration-200"-->
+    <!--             href="{{item.sectionID}}">-->
+    <!--            <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}</a>-->
+    <!--        </li>-->
+    <!--      </ul>-->
+    <!--    </div>-->
 
     <h1 class=" font-pangolin text-center text-3xl md:text-4xl lg:text-5xl">Привет, я Анатолий<br>фронтенд разработчик</h1>
     <p class=" text-lg md:text-xl lg:text-2xl text-center font-roboto font-extralight">Фронтенд — это не просто код, это искусство
