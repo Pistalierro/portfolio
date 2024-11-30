@@ -3,6 +3,7 @@ import {HeaderComponent} from './components/layouts/header/header.component';
 import {AboutComponent} from './components/sections/about/about.component';
 import {ProjectsListComponent} from './components/sections/projects-list/projects-list.component';
 import {MenuComponent} from './components/sections/menu/menu.component';
+import {SkillsComponent} from './components/sections/skills/skills.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import {MenuComponent} from './components/sections/menu/menu.component';
     HeaderComponent,
     AboutComponent,
     ProjectsListComponent,
-    MenuComponent
+    MenuComponent,
+    SkillsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
