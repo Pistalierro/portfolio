@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, ElementRef, inject, ViewChild} from '@angular/core';
 import {SmoothScrollService} from '../../../shared/services/smooth-scroll.service';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
-import {MENU_ITEMS} from '../../sections/menu/menu-mock';
 import {MenuListInterface} from '../../../shared/types/menuList.interface';
 import {MobileMenuService} from '../../../shared/services/mobile-menu.service';
+import {MENU_ITEMS} from '../../../shared/mock/menu-mock';
 
 @Component({
   selector: 'app-header',
@@ -30,23 +30,17 @@ export class HeaderComponent implements AfterViewInit {
     this.mobileMenuEl = this.mobileMenuContainer.nativeElement;
   }
 
-  // toggleMobileMenu(): void {
-  //   this.mobileMenuService.toggleMobileMenu();
-  //   console.log(this.mobileMenuEl);
-  //   console.log(this.mobileMenuService.isMobileMenuOpen);
-  //   // if (this.mobileMenuEl) this.mobileMenuEl.style.transform = this.mobileMenuService.isMobileMenuOpen ? 'scaleY(1)' : 'scaleY(0)';
-  //   if (this.mobileMenuEl) this.mobileMenuEl.style.display = this.mobileMenuService.isMobileMenuOpen ? 'none' : 'block';
-  // }
-
   toggleMobileMenu(): void {
     this.mobileMenuService.toggleMobileMenu();
-    if (this.mobileMenuEl) {
-      this.mobileMenuEl.style.transform = this.mobileMenuService.isMobileMenuOpen ? 'scaleY(1)' : 'scaleY(0)';
-    }
+    if (this.mobileMenuEl) this.mobileMenuEl.style.transform = this.mobileMenuService.isMobileMenuOpen ? 'scaleY(1)' : 'scaleY(0)';
 
   }
 
   closeMobileMenu(sectionID: string): void {
     this.mobileMenuService.closeMobileMenu();
+    if (!this.mobileMenuService.isMobileMenuOpen && this.mobileMenuEl) {
+      this.mobileMenuEl.style.transform = 'scaleY(0)';
+      this.smoothScrollService.scrollToSection(sectionID);
+    }
   }
 }

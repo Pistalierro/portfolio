@@ -1,20 +1,19 @@
-<nav class="fixed top-0 right-0 left-0 bg-black bg-opacity-60 z-10">
-  <div class="relative container mx-auto px-4 flex items-center justify-between text-white">
-    <div>
-      <img alt="logo" class="h-10 md:h-12" src="/logos/AG_logo_150x100_golden.png">
+<nav *ngIf="isMenuVisible" [@slideDown] class="fixed text-white flex items-center bg-black bg-opacity-60 top-0 right-0 left-0 z-10">
+
+  <div class="relative container mx-auto flex px-4 items-center justify-between">
+
+    <div class="navbar-image">
+      <img alt="logo" class="h-12" src="/logos/AG_logo_150x100_golden.png">
     </div>
 
-    <div class="flex md:hidden w-full justify-end">
-      <button (click)="mobileMenuService.toggleMobileMenu()" class="text-white focus:outline-none">
-        <!-- Меню закрыто - иконка гамбургера -->
+    <div class="md:hidden mt-1 navbar-toggle">
+      <button (click)="toggleMobileMenu()">
         <svg *ngIf="!mobileMenuService.isMobileMenuOpen" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M4 6h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <path d="M4 12h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           <path d="M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
         </svg>
-
-        <!-- Меню открыто - иконка крестика -->
         <svg *ngIf="mobileMenuService.isMobileMenuOpen" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M6 6L18 18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -23,11 +22,11 @@
       </button>
     </div>
 
-    <div>
-      <ul class="hidden md:flex items-center space-x-8">
-        <li *ngFor="let item of menuItems">
+    <div class="hidden md:flex space-x-4 md:space-x-8 navbar-list">
+      <ul *ngFor="let item of menuItems" class="flex">
+        <li>
           <a (click)="smoothScrollService.scrollToSection(item.sectionID)"
-             class="font-pangolin text-xl -mt-4 hover:text-shadow-strong duration-200 hover:cursor-pointer">
+             class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
             <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
           </a>
         </li>
@@ -36,10 +35,14 @@
   </div>
 </nav>
 
-<!--<ul *ngIf="mobileMenuService.isMobileMenuOpen"-->
-<!--    class="absolute p-6  top-20  -right-16 text-xl -left-16 font-pangolin bg-black bg-opacity-60 h-auto flex flex-col md:hidden items-center gap-6">-->
-<!--  <li *ngFor="let item of menuItems">-->
-<!--    <a (click)="smoothScrollService.scrollToSection(item.sectionID)">-->
-<!--      <i *ngIf="item.icon" [ngClass]="item.icon"></i> {{ item.label }}</a>-->
-<!--  </li>-->
-<!--</ul>-->
+<div #mobileMenuContainer
+     class="menu-container fixed text-white top-12 space-y-4 text-center -right-8 -left-8 bg-black bg-opacity-60 z-20">
+  <ul *ngFor="let item of menuItems">
+    <li>
+      <a (click)="closeMobileMenu(item.sectionID)"
+         class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
+        <i (click)="closeMobileMenu(item.sectionID)" *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
+      </a>
+    </li>
+  </ul>
+</div>

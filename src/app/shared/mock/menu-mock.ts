@@ -1,4 +1,4 @@
-import {MenuListInterface} from '../../../shared/types/menuList.interface';
+import {MenuListInterface} from '../types/menuList.interface';
 
 export const MENU_ITEMS: MenuListInterface[] = [
   {sectionID: 'header', label: '', icon: 'fa-solid fa-house'},

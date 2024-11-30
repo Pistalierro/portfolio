@@ -1,6 +1,7 @@
 import {Component, HostListener} from '@angular/core';
 import {HeaderComponent} from './components/layouts/header/header.component';
 import {AboutComponent} from './components/sections/about/about.component';
+import {ProjectsListComponent} from './components/sections/projects-list/projects-list.component';
 import {MenuComponent} from './components/sections/menu/menu.component';
 
 @Component({
@@ -9,6 +10,7 @@ import {MenuComponent} from './components/sections/menu/menu.component';
   imports: [
     HeaderComponent,
     AboutComponent,
+    ProjectsListComponent,
     MenuComponent
   ],
   templateUrl: './app.component.html',
