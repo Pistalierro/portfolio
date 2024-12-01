@@ -7,20 +7,17 @@ import {AfterViewInit, Directive, ElementRef, EventEmitter, inject, OnDestroy, O
 })
 export class InViewportDirective implements OnDestroy, AfterViewInit {
 
-  @Output() inViewport: EventEmitter<void> = new EventEmitter();
+  @Output() inViewport: EventEmitter<boolean> = new EventEmitter();
   private observer!: IntersectionObserver;
   private element = inject(ElementRef);
 
   ngAfterViewInit() {
     this.observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.inViewport.emit();
-          this.observer.unobserve(this.element.nativeElement);
-        }
+        this.inViewport.emit(entry.isIntersecting);
       });
     }, {
-      threshold: 0.1
+      threshold: 0.05
     });
     this.observer.observe(this.element.nativeElement);
   }

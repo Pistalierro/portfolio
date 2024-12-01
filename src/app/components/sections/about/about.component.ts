@@ -32,12 +32,16 @@ export class AboutComponent {
     this.isCertificateOpen = false;
   }
 
-  onInViewport(blockNumber: number): void {
-    if (this.blockStates[blockNumber] === 'hidden') {
+  onInViewport(blockNumber: number, isVisible: boolean) {
+    if (isVisible) {
+      // Элемент вошёл в область видимости
       const delay = (blockNumber - 1) * 300;
       setTimeout(() => {
         this.blockStates[blockNumber] = 'visible';
       }, delay);
+    } else {
+      // Элемент вышел из области видимости
+      this.blockStates[blockNumber] = 'hidden';
     }
   }
 }
