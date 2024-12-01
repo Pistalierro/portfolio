@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        hoverColor: '#E64337'
+        hoverColor: '#E64337',
+        secondaryColor: '#EE8824'
       },
       fontFamily: {
         pangolin: ['Pangolin', 'cursive'],

@@ -1,4 +1,5 @@
-<nav *ngIf="isMenuVisible" [@slideDown] class="fixed text-white flex items-center bg-black bg-opacity-60 top-0 right-0 left-0 z-10">
+<nav *ngIf="isMenuVisible" [@slideDown]
+     class="fixed flex items-center bg-black bg-opacity-60 top-0 right-0 left-0 z-10">
 
   <div class="relative container mx-auto flex px-4 items-center justify-between">
 
@@ -6,7 +7,7 @@
       <img alt="logo" class="h-12" src="/logos/AG_logo_150x100_golden.png">
     </div>
 
-    <div class="md:hidden mt-1 navbar-toggle">
+    <div class="md:hidden mt-1 navbar-toggle text-secondaryColor">
       <button (click)="toggleMobileMenu()">
         <svg *ngIf="!mobileMenuService.isMobileMenuOpen" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +27,7 @@
       <ul *ngFor="let item of menuItems" class="flex">
         <li>
           <a (click)="smoothScrollService.onMenuItemClick(item)"
-             class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
+             class="text-secondaryColor text-lg lg:text-xl font-pangolin hover:text-hoverColor duration-200 cursor-pointer">
             <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
           </a>
         </li>
@@ -36,11 +37,11 @@
 </nav>
 
 <div #mobileMenuContainer
-     class="menu-container fixed text-white top-12 space-y-4 text-center -right-8 -left-8 bg-black bg-opacity-60 z-20">
+     class="menu-container fixed py-4 top-12 space-y-4 text-center -right-8 -left-8 bg-black bg-opacity-60 z-20">
   <ul *ngFor="let item of menuItems">
     <li>
       <a (click)="closeMobileMenu(item.sectionID)"
-         class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
+         class="text-secondaryColor hover:text-hoverColor text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
         <i (click)="closeMobileMenu(item.sectionID)" *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
       </a>
     </li>
