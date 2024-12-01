@@ -25,7 +25,7 @@
     <div class="hidden md:flex space-x-4 md:space-x-8 navbar-list">
       <ul *ngFor="let item of menuItems" class="flex">
         <li>
-          <a (click)="smoothScrollService.scrollToSection(item.sectionID)"
+          <a (click)="smoothScrollService.onMenuItemClick(item)"
              class="text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
             <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
           </a>

@@ -4,6 +4,7 @@ import {AboutComponent} from './components/sections/about/about.component';
 import {ProjectsListComponent} from './components/sections/projects-list/projects-list.component';
 import {MenuComponent} from './components/sections/menu/menu.component';
 import {SkillsComponent} from './components/sections/skills/skills.component';
+import {ContactsComponent} from './components/sections/contacts/contacts.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import {SkillsComponent} from './components/sections/skills/skills.component';
     AboutComponent,
     ProjectsListComponent,
     MenuComponent,
-    SkillsComponent
+    SkillsComponent,
+    ContactsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

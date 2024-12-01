@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
-import {ModalService} from '../../../shared/services/modal.service';
 import {NgIf} from '@angular/common';
+import {ModalService} from '../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-about',
@@ -13,15 +13,15 @@ import {NgIf} from '@angular/common';
 })
 export class AboutComponent {
 
-  isModalOpen = false;
+  isCertificateOpen: boolean = false;
 
   modalService = inject(ModalService);
 
-  openModal(): void {
-    this.isModalOpen = true;
+  openCertificateModal(): void {
+    this.isCertificateOpen = true;
   }
 
-  closeModal(): void {
-    this.isModalOpen = false;
+  closeCertificateModal(): void {
+    this.isCertificateOpen = false;
   }
 }
