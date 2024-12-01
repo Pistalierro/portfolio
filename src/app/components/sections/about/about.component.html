@@ -1,4 +1,4 @@
-<section class="relative min-h-screen bg-cover bg-center" id="about"
+<section class="relative min-h-screen bg-cover bg-center overflow-hidden" id="about"
          style="background-image: url('/bg/bg-about1920x1080.jpg');">
   <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-sm"></div>
 
@@ -8,7 +8,10 @@
     <!-- Первая часть: Блок с текстом и блок с фото и кнопками -->
     <div class="flex flex-col lg:flex-row justify-between items-start gap-28">
       <!-- Блок с текстом обо мне -->
-      <div class="w-full lg:w-3/4 flex items-center order-last lg:order-first">
+      <div (inViewport)="onInViewport(1)"
+           [@fadeInLeftTop]="blockStates[1]"
+           appInViewport
+           class="w-full lg:w-3/4 flex items-center order-last lg:order-first">
         <div class="w-full lg:text-left bg-white bg-opacity-70 p-6 rounded-lg shadow-xl">
           <h2 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6 text-gray-700 font-pangolin">Обо мне</h2>
           <p class="text-md md:text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -21,14 +24,17 @@
       </div>
 
       <!-- Блок с фото и кнопками -->
-      <div class="w-full lg:w-1/4 flex flex-col items-center lg:justify-center">
+      <div (inViewport)="onInViewport(2)"
+           [@fadeInRightTop]="blockStates[2]"
+           appInViewport
+           class="w-full lg:w-1/4 flex flex-col items-center lg:justify-center">
         <img alt="Анатолий Сысоенко"
              class="w-64 h-auto md:w-80 max-w-full rounded-full shadow-lg transition-transform duration-300 hover:scale-110"
              src="/img/profile-photo.png">
         <div class="mt-6 flex flex-col gap-4 w-full items-center ">
           <a (click)="modalService.toggleModal('contacts')"
              class="uppercase min-w-[220px] bg-black bg-opacity-40 hover:bg-hoverColor  text-white  text-center py-2 px-6 rounded-md transition-colors duration-200">
-            <i class="fa-solid fa-phone mr-3"></i>мои контакты
+            <i class="fa-solid fa-phone mr-3"></i>Mои контакты
           </a>
           <a
             class="uppercase min-w-[220px] bg-black bg-opacity-40 hover:bg-hoverColor text-white text-center py-2 px-6 rounded-md transition-colors duration-200"
@@ -42,7 +48,10 @@
     <!-- Вторая часть: Блок с сертификатом и текстом -->
     <div class="flex flex-col lg:flex-row justify-between gap-10">
       <!-- Блок с сертификатом -->
-      <div class="w-full items-center lg:w-1/3 flex justify-center">
+      <div (inViewport)="onInViewport(3)"
+           [@fadeInLeftBottom]="blockStates[3]"
+           appInViewport
+           class="w-full items-center lg:w-1/3 flex justify-center">
         <img (click)="openCertificateModal()"
              alt="Сертификат об окончании курсов"
              class="w-auto h-auto rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-110"
@@ -51,18 +60,17 @@
 
       <!-- Модальное окно с сертификатом -->
       <div (click)="closeCertificateModal()" *ngIf="isCertificateOpen"
-           class=" fixed inset-0 flex items-center justify-center bg-gray-300">
+           class=" absolute inset-0 flex items-center justify-center">
         <div (click)="$event.stopPropagation()" class=" relative bg-white rounded-lg p-4">
-          <img
-            alt="Сертификат об окончании курсов"
-            class="modal-image max-w-full h-auto"
-            src="/img/certificate.jpg"
-          />
-          <button (click)="closeCertificateModal()" class="absolute -top-6 right-0" type="button">Закрыть</button>
+          <img alt="Сертификат об окончании курсов" class="modal-image max-w-full h-auto" src="/img/certificate.jpg"/>
+          <button (click)="closeCertificateModal()" class="absolute -top-1 right-1" type="button">Закрыть</button>
         </div>
       </div>
       <!-- Блок с текстом об образовании -->
-      <div class="w-full lg:w-2/3 flex items-center lg:pl-8">
+      <div (inViewport)="onInViewport(4)"
+           [@fadeInRightBottom]="blockStates[4]"
+           appInViewport
+           class="w-full lg:w-2/3 flex items-center lg:pl-8">
         <div class="w-full text-center md:text-left bg-white p-6 rounded-lg shadow-xl">
           <h2 class="text-xl md:text-2xl lg:text-4xl font-bold mb-4 text-gray-700 font-pangolin">Профильное образование</h2>
           <p class="text-md md:text-lg lg:text-xl text-gray-600 font-normal leading-relaxed">
