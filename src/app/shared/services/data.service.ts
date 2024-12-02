@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {collection, collectionData, Firestore} from '@angular/fire/firestore';
+import {collection, collectionData, doc, docData, Firestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {ProjectInterface} from '../types/project.interface';
 
@@ -13,5 +13,10 @@ export class DataService {
   getProjectList(collectionName: string): Observable<ProjectInterface[]> {
     const colRf = collection(this.firestore, collectionName);
     return collectionData(colRf, {idField: 'id'}) as Observable<ProjectInterface[]>;
+  }
+
+  getProjectById(id: string): Observable<ProjectInterface> {
+    const docRef = doc(this.firestore, `projectList/${id}`);
+    return docData(docRef, {idField: 'id'}) as Observable<ProjectInterface>;
   }
 }

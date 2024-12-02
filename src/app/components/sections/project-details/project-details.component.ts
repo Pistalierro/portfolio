@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {DataService} from '../../../shared/services/data.service';
+import {ProjectInterface} from '../../../shared/types/project.interface';
 
 @Component({
   selector: 'app-project-details',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss'
 })
-export class ProjectDetailsComponent {
+export class ProjectDetailsComponent implements OnInit {
 
+  project!: ProjectInterface;
+
+  dataService = inject(DataService);
+
+  ngOnInit() {
+    
+  }
 }

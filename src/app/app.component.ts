@@ -1,10 +1,13 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, inject, OnInit} from '@angular/core';
 import {HeaderComponent} from './components/layouts/header/header.component';
 import {AboutComponent} from './components/sections/about/about.component';
 import {ProjectsListComponent} from './components/sections/projects-list/projects-list.component';
 import {MenuComponent} from './components/sections/menu/menu.component';
 import {SkillsComponent} from './components/sections/skills/skills.component';
 import {ContactsComponent} from './components/sections/contacts/contacts.component';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
+import {filter} from 'rxjs';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +18,18 @@ import {ContactsComponent} from './components/sections/contacts/contacts.compone
     ProjectsListComponent,
     MenuComponent,
     SkillsComponent,
-    ContactsComponent
+    ContactsComponent,
+    RouterOutlet,
+    NgIf
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   showMenu: boolean = false;
+  isProjectDetailsPage: boolean = false;
+  private router = inject(Router);
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -31,5 +38,13 @@ export class AppComponent {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
     const viewportHeight = window.innerHeight;
     this.showMenu = scrollPosition > headerHeight - (0.3 * viewportHeight);
+  }
+
+  ngOnInit() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(event => {
+        this.isProjectDetailsPage = event.urlAfterRedirects.startsWith('/projectList/');
+      });
   }
 }

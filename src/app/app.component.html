@@ -1,6 +1,13 @@
 <app-menu [isMenuVisible]="showMenu"></app-menu>
-<app-header></app-header>
-<app-about></app-about>
-<app-projects-list></app-projects-list>
-<app-skills></app-skills>
-<app-contacts></app-contacts>
+
+<ng-container *ngIf="!isProjectDetailsPage; else projectDetails">
+  <app-header></app-header>
+  <app-about></app-about>
+  <app-projects-list></app-projects-list>
+  <app-skills></app-skills>
+  <app-contacts></app-contacts>
+</ng-container>
+
+<ng-template #projectDetails>
+  <router-outlet></router-outlet>
+</ng-template>
