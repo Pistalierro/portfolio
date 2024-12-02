@@ -5,7 +5,7 @@ import {catchError, map, Observable, of} from 'rxjs';
 import {ProjectInterface} from '../types/project.interface';
 
 
-export const projectDetailsResolver: ResolveFn<ProjectInterface | null> = (route, state): Observable<ProjectInterface | null> => {
+export const projectDetailsResolver: ResolveFn<ProjectInterface | boolean> = (route): Observable<ProjectInterface | boolean> => {
   const dataService = inject(DataService);
   const router = inject(Router);
 
@@ -20,15 +20,15 @@ export const projectDetailsResolver: ResolveFn<ProjectInterface | null> = (route
         } else {
           console.warn('Project not found.');
           router.navigate(['/']).then();
-          return null;
+          return false;
         }
       }),
       catchError((error) => {
         console.warn('Error fetching project data:', error);
         router.navigate(['/']).then();
-        return of(null);
+        return of(false);
       })
     );
   }
-  return of(null);
+  return of(false);
 };
