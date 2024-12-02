@@ -17,7 +17,7 @@ export class InViewportDirective implements OnDestroy, AfterViewInit {
         this.inViewport.emit(entry.isIntersecting);
       });
     }, {
-      threshold: 0.05
+      threshold: 0
     });
     this.observer.observe(this.element.nativeElement);
   }
