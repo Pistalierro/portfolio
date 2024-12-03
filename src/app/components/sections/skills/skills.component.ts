@@ -32,7 +32,6 @@ export class SkillsComponent implements OnInit {
         }));
       })
     );
-    this.skills$.subscribe(skills => console.log(skills));
   }
 
   onInViewport(skill: SkillInterface, blockNumber: number, isVisible: boolean) {
