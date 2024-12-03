@@ -14,11 +14,13 @@ export class SmoothScrollService {
     if (this.router.url !== '/') {
       // Если текущий маршрут не корневой, переходим на главную страницу
       this.router.navigate(['/']).then(() => {
-        this.scrollToElement(sectionID);
+        setTimeout(() => {
+          this.scrollToElement(sectionID, false);
+        }, 0);
       });
     } else {
       // Если уже на главной странице, прокручиваем сразу
-      this.scrollToElement(sectionID);
+      this.scrollToElement(sectionID, true);
     }
   }
 
@@ -30,10 +32,13 @@ export class SmoothScrollService {
     }
   }
 
-  private scrollToElement(sectionID: string): void {
+  private scrollToElement(sectionID: string, smooth: boolean): void {
     const section = document.getElementById(sectionID);
     if (section) {
-      section.scrollIntoView({behavior: 'smooth', block: 'start'});
+      section.scrollIntoView({
+        behavior: smooth ? 'smooth' : 'auto',
+        block: 'start'
+      });
     }
   }
 }

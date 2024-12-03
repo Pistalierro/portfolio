@@ -26,10 +26,11 @@ export class MenuComponent implements AfterViewInit {
   smoothScrollService = inject(SmoothScrollService);
   mobileMenuService = inject(MobileMenuService);
   modalService = inject(ModalService);
+  mobileMenuEl!: HTMLElement;
+
 
   @Input() isMenuVisible: boolean = false;
   @ViewChild('mobileMenuContainer') mobileMenuContainer!: ElementRef;
-  mobileMenuEl!: HTMLElement;
 
   ngAfterViewInit(): void {
     this.mobileMenuEl = this.mobileMenuContainer.nativeElement;

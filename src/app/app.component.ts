@@ -32,12 +32,14 @@ export class AppComponent implements OnInit {
   private router = inject(Router);
 
   @HostListener('window:scroll', ['$event'])
+
   onWindowScroll() {
     const header = document.getElementById('header');
     const headerHeight = header ? header.offsetHeight : 0;
     const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
     const viewportHeight = window.innerHeight;
     this.showMenu = scrollPosition > headerHeight - (0.3 * viewportHeight);
+
   }
 
   ngOnInit() {
