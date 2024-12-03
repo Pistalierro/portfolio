@@ -23,6 +23,6 @@ export class ProjectsListComponent implements OnInit {
   private dataService = inject(DataService);
 
   ngOnInit() {
-    this.projectList$ = this.dataService.getProjectList('projectList');
+    this.projectList$ = this.dataService.getProjectList();
   }
 }

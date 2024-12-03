@@ -1,12 +1,38 @@
 <section class="relative header min-h-screen overflow-hidden bg-cover bg-center" id="skills"
          style="background-image: url('/bg/bg-skills1920x1080.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm"></div>
-  <div class="relative container py-[100px] mx-auto px-4">
-    <h2 class="font-pangolin text-center text-4xl font-bold text-gray-800">TECH SKILLS</h2>
-    <div class="grid-container grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <article>
-        
-      </article>
+  <div class="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"></div>
+  <div class="container relative mx-auto px-4 py-[100px]">
+    <h2 class="text-4xl  mb-12 text-center font-pangolin">TECH SKILLS</h2>
+
+    <!-- Карточки - скрываются на мобильных экранах -->
+    <div *ngIf="skills$ | async as skills" class="hidden md:grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-6">
+      <div *ngFor="let skill of skills" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front bg-white text-gray-700 font-bold bg-opacity-60 border-2">
+            <div class="flex flex-col items-center justify-center text-center p-6">
+              <img [alt]="skill.name" [src]="skill.icon" class="w-44 h-44 mb-4 opacity-100">
+              <h3 class="text-3xl font-pangolin opacity-100">{{ skill.name }}</h3>
+            </div>
+          </div>
+          <div class="flip-card-back font-roboto font-light bg-black bg-opacity-60 flex justify-center items-center p-6">
+            <p class="text-lg leading-relaxed text-center text-white">{{ skill.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Элегантный список навыков для мобильных устройств -->
+    <div *ngIf="skills$ | async as skills" class="block md:hidden">
+      <ul class="space-y-6">
+        <li *ngFor="let skill of skills"
+            class="flex items-center bg-gradient-to-r from-blue-500/60 to-green-500/60 p-4 rounded-lg shadow-md">
+          <img [alt]="skill.name" [src]="skill.icon" class="w-16 h-16 mr-4">
+          <div>
+            <p class="text-xl font-semibold text-white">{{ skill.name }}</p>
+            <p class="text-sm text-gray-100 mt-1">{{ skill.description }}</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
