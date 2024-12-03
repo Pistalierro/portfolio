@@ -3,4 +3,5 @@ export interface SkillInterface {
   name: string;
   description: string;
   icon: string;
+  blockStates: { [key: number]: 'hidden' | 'visible' };
 }

@@ -44,4 +44,6 @@ export class AboutComponent {
       this.blockStates[blockNumber] = 'hidden';
     }
   }
+
+
 }
