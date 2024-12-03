@@ -23,9 +23,9 @@
 
     <!-- Элегантный список навыков для мобильных устройств -->
     <div *ngIf="skills$ | async as skills" class="block md:hidden">
-      <ul class="space-y-6">
-        <li *ngFor="let skill of skills"
-            class="flex items-center bg-gradient-to-r from-blue-500/60 to-green-500/60 p-4 rounded-lg shadow-md">
+      <ul (inViewport)="onInViewport(skill, i, $event)" *ngFor="let skill of skills; let i = index" appInViewport>
+        <li [@fadeInRightBottom]="skill.blockStates[i]"
+            class="flex items-center bg-gradient-to-r from-blue-500/60 to-green-500/60 p-4 rounded-lg shadow-md mb-5">
           <img [alt]="skill.name" [src]="skill.icon" class="w-16 h-16 mr-4">
           <div>
             <p class="text-xl font-semibold text-white">{{ skill.name }}</p>
