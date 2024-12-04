@@ -3,3 +3,9 @@
   transform-origin: top;
   transition: transform 0.3s ease-in-out;
 }
+
+.active {
+  color: #E64337;
+  font-weight: bold;
+  text-decoration: underline;
+}

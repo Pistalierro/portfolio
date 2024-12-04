@@ -35,7 +35,7 @@ export class AboutComponent {
   onInViewport(blockNumber: number, isVisible: boolean) {
     if (isVisible) {
       // Элемент вошёл в область видимости
-      const delay = (blockNumber - 1) * 300;
+      const delay = (blockNumber - 1) * 400;
       setTimeout(() => {
         this.blockStates[blockNumber] = 'visible';
       }, delay);

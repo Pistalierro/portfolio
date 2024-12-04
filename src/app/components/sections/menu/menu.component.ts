@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, inject, Input, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, Input, OnInit, ViewChild} from '@angular/core';
 import {MenuListInterface} from '../../../shared/types/menuList.interface';
 import {SmoothScrollService} from '../../../shared/services/smooth-scroll.service';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
@@ -6,34 +6,36 @@ import {MobileMenuService} from '../../../shared/services/mobile-menu.service';
 import {MENU_ITEMS} from '../../../shared/mock/menu-mock';
 import {SLIDE_DOWN} from '../../../shared/mock/animation';
 import {ModalService} from '../../../shared/services/modal.service';
+import {SectionObserverService} from '../../../shared/services/section-observer.service';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [
-    NgForOf,
-    NgIf,
-    NgClass
-  ],
+  imports: [NgForOf, NgIf, NgClass],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   animations: [SLIDE_DOWN]
 })
-export class MenuComponent implements AfterViewInit {
+export class MenuComponent implements OnInit, AfterViewInit {
 
   menuItems: MenuListInterface[] = MENU_ITEMS;
-
+  activeSection: string = '';
   smoothScrollService = inject(SmoothScrollService);
   mobileMenuService = inject(MobileMenuService);
   modalService = inject(ModalService);
   mobileMenuEl!: HTMLElement;
-
-
   @Input() isMenuVisible: boolean = false;
   @ViewChild('mobileMenuContainer') mobileMenuContainer!: ElementRef;
+  private sectionObserverService = inject(SectionObserverService);
+
+  ngOnInit(): void {
+
+  }
 
   ngAfterViewInit(): void {
     this.mobileMenuEl = this.mobileMenuContainer.nativeElement;
+    this.sectionObserverService.observeSections();
+    this.sectionObserverService.activeSection$.subscribe(res => this.activeSection = res);
   }
 
   toggleMobileMenu(): void {
@@ -43,21 +45,16 @@ export class MenuComponent implements AfterViewInit {
   }
 
   closeMobileMenu(sectionID: string): void {
-    // Проверяем, нужно ли открыть модальное окно
     if (sectionID === 'contacts') {
       this.modalService.toggleModal(sectionID);
     } else {
-      // Если это не модальное окно, прокручиваем к секции
       this.smoothScrollService.scrollToSection(sectionID);
     }
 
-    // Закрываем мобильное меню
     this.mobileMenuService.closeMobileMenu();
 
-    // Обрабатываем анимацию скрытия мобильного меню
     if (!this.mobileMenuService.isMobileMenuOpen && this.mobileMenuEl) {
       this.mobileMenuEl.style.transform = 'scaleY(0)';
     }
   }
-
 }

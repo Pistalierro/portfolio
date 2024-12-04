@@ -27,6 +27,7 @@
       <ul *ngFor="let item of menuItems" class="flex">
         <li>
           <a (click)="smoothScrollService.onMenuItemClick(item)"
+             [ngClass]="{'active' : activeSection === item.sectionID}"
              class="text-secondaryColor text-lg lg:text-xl font-pangolin hover:text-hoverColor duration-200 cursor-pointer">
             <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
           </a>
