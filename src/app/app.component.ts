@@ -8,6 +8,7 @@ import {ContactsComponent} from './components/sections/contacts/contacts.compone
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {filter} from 'rxjs';
 import {NgIf} from '@angular/common';
+import {FooterComponent} from './components/layouts/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import {NgIf} from '@angular/common';
     SkillsComponent,
     ContactsComponent,
     RouterOutlet,
-    NgIf
+    NgIf,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -32,7 +34,7 @@ export class AppComponent implements OnInit {
   private router = inject(Router);
 
   @HostListener('window:scroll', ['$event'])
-  
+
 
   onWindowScroll() {
     const header = document.getElementById('header');

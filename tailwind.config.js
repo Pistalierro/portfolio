@@ -23,7 +23,7 @@ module.exports = {
         }
       },
       textShadow: {
-        'default': '0 0 10px rgba(0, 255, 255, 0.5)',
+        'default': '0 0 15px #000000, 0 0 30px #000000, 0 0 60px #000000, 0 0 80px #000000',
         'strong': '0 0 10px #ffffff, 0 0 20px #ffffff'
       }
     }

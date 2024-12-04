@@ -20,7 +20,7 @@ export const FADE_IN_LEFT_TOP = trigger('fadeInLeftTop', [
     opacity: 1,
     transform: 'translateX(0) translateY(0)'
   })),
-  transition('hidden <=> visible', [animate('750ms ease-out')])
+  transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
 
 export const FADE_IN_RIGHT_TOP = trigger('fadeInRightTop', [
@@ -32,7 +32,7 @@ export const FADE_IN_RIGHT_TOP = trigger('fadeInRightTop', [
     opacity: 1,
     transform: 'translateX(0) translateY(0)'
   })),
-  transition('hidden <=> visible', [animate('750ms ease-out')])
+  transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
 
 export const FADE_IN_LEFT_BOTTOM = trigger('fadeInLeftBottom', [
@@ -44,7 +44,7 @@ export const FADE_IN_LEFT_BOTTOM = trigger('fadeInLeftBottom', [
     opacity: 1,
     transform: 'translateX(0) translateY(0)'
   })),
-  transition('hidden <=> visible', [animate('750ms ease-out')])
+  transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
 
 export const FADE_IN_RIGHT_BOTTOM = trigger('fadeInRightBottom', [
@@ -56,5 +56,5 @@ export const FADE_IN_RIGHT_BOTTOM = trigger('fadeInRightBottom', [
     opacity: 1,
     transform: 'translateX(0) translateY(0)'
   })),
-  transition('hidden <=> visible', [animate('300ms ease-out')])
+  transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
