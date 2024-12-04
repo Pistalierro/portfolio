@@ -14,7 +14,7 @@ export const SLIDE_DOWN = trigger('slideDown', [
 export const FADE_IN_LEFT_TOP = trigger('fadeInLeftTop', [
   state('hidden', style({
     opacity: 0,
-    transform: 'translateX(-100%) translateY(-50%)'
+    transform: 'translateX(-30%) translateY(-30%)'
   })),
   state('visible', style({
     opacity: 1,
@@ -26,7 +26,7 @@ export const FADE_IN_LEFT_TOP = trigger('fadeInLeftTop', [
 export const FADE_IN_RIGHT_TOP = trigger('fadeInRightTop', [
   state('hidden', style({
     opacity: 0,
-    transform: 'translateX(100%) translateY(-50%)'
+    transform: 'translateX(30%) translateY(-30%)'
   })),
   state('visible', style({
     opacity: 1,
@@ -38,7 +38,7 @@ export const FADE_IN_RIGHT_TOP = trigger('fadeInRightTop', [
 export const FADE_IN_LEFT_BOTTOM = trigger('fadeInLeftBottom', [
   state('hidden', style({
     opacity: 0,
-    transform: 'translateX(-100%) translateY(50%)'
+    transform: 'translateX(-30%) translateY(30%)'
   })),
   state('visible', style({
     opacity: 1,
@@ -50,7 +50,7 @@ export const FADE_IN_LEFT_BOTTOM = trigger('fadeInLeftBottom', [
 export const FADE_IN_RIGHT_BOTTOM = trigger('fadeInRightBottom', [
   state('hidden', style({
     opacity: 0,
-    transform: 'translateX(100%) translateY(50%)'
+    transform: 'translateX(30%) translateY(30%)'
   })),
   state('visible', style({
     opacity: 1,
