@@ -4,7 +4,9 @@
   <div class="relative container py-[100px] mx-auto px-4">
     <h2 class="text-secondaryColor text-2xl lg:text-4xl text-center font-pangolin mb-5">Портфолио</h2>
     <div *ngIf="projectList$ | async as projectList" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <article *ngFor="let project of projectList"
+      <article (inViewport)="onInViewport(project, i, $event)" *ngFor="let project of projectList; let i = index"
+               [@fadeInBottom]="project.blockStates[i]"
+               appInViewport
                class="group relative overflow-hidden rounded-lg shadow-lg transform transition duration-300">
         <a [routerLink]="['/projectList', project.id]" class="block h-full overflow-hidden">
           <picture>

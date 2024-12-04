@@ -9,4 +9,5 @@ export interface ProjectInterface {
   link: string;
   technologies: string[];
   tools: string[];
+  blockStates: { [key: number]: 'hidden' | 'visible' };
 }
