@@ -1,4 +1,65 @@
-<!--<section (click)="onMenuItemClick('contacts')" *ngIf="!modalService.isModalOpen" class="fixed inset-48 bg-red-600 bg-opacity-50 rounded-lg"-->
-<!--         id="contacts">-->
+<button (click)="modalService.toggleModal('contacts')"
+        class="fixed z-10 bottom-4 right-4 bg-blue-600 text-white rounded-full py-4 px-5 shadow-lg hover:bg-blue-500 focus:outline-none">
+  <i class="fas fa-envelope text-2xl"></i>
+</button>
 
-<!--</section>-->
+<div (click)="modalService.closeModal()" *ngIf="modalService.isModalOpen"
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10" id="contacts">
+  <div (click)="$event.stopPropagation()"
+       class="bg-gray-300 p-8 rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-2/3 relative">
+
+    <button (click)="modalService.closeModal()" class="absolute top-0 right-2 text-gray-600 text-4xl">
+      &times;
+    </button>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-4">
+            <label class="block text-lg font-medium text-gray-700" for="name">Имя</label>
+            <input [(ngModel)]="formData.name"
+                   class="mt-1 p-2 w-full shadow-lg border-2 border-gray-400 rounded-md bg-gray-200"
+                   id="name" name="name" required type="text">
+          </div>
+          <div class="mb-4">
+            <label class="block text-lg font-medium text-gray-700" for="email">Email</label>
+            <input [(ngModel)]="formData.email"
+                   class="mt-1 p-2 w-full shadow-lg border-2 border-gray-400 bg-gray-200 rounded-md"
+                   id="email" name="email" required type="email">
+          </div>
+          <div class="mb-4">
+            <label class="block text-lg font-medium text-gray-700" for="message">Сообщение</label>
+            <textarea [(ngModel)]="formData.message"
+                      class="mt-1 p-2 w-full shadow-lg border-2 border-gray-400 bg-gray-200 rounded-md"
+                      id="message" name="message" required></textarea>
+          </div>
+          <button
+            class="bg-gradient-to-r from-blue-500 to-green-700 text-white shadow-lg font-semibold py-2 px-4 rounded hover:bg-blue-500"
+            type="submit">
+            Отправить
+          </button>
+        </form>
+      </div>
+
+      <div class="flex flex-col justify-around items-center">
+        <h3 class="text-2xl font-semibold mb-4">Связаться со мной:</h3>
+        <p class="flex items-center mb-2 text-gray-600 text-2xl">
+          <i class="fas fa-phone mr-2"></i> +380 66 426 04 66
+        </p>
+        <p class="flex items-center mb-2 text-gray-600 text-2xl">
+          <i class="fas fa-map-marker-alt mr-2"></i> Киев, Украина
+        </p>
+        <p class="flex items-center mb-2 text-gray-600 text-2xl">
+          <i class="fa-brands fa-linkedin mr-2"></i><a href="https://www.linkedin.com/in/anatoliy-sysoienko-5a2029252/" target="_blank">Моя
+          страница на LinkedIn</a>
+        </p>
+        <p class="flex items-center mb-2 text-gray-600 text-2xl">
+          <i class="fas fa-envelope mr-2"></i><a [href]="'mailto:' + email" class="text-gray-600 cursor-pointer">{{ email }}</a>
+        </p>
+        <p class="flex items-center text-2xl text-gray-600">
+          <i class="fas fa-globe mr-2"></i><a href="https://portfolio-application-34871.web.app/" target="_blank">Сайт визитка</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

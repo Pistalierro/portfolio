@@ -42,7 +42,7 @@
     <li>
       <a (click)="closeMobileMenu(item.sectionID)"
          class="text-secondaryColor hover:text-hoverColor text-lg lg:text-xl font-pangolin hover:text-shadow-strong duration-200 cursor-pointer">
-        <i (click)="closeMobileMenu(item.sectionID)" *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
+        <i *ngIf="item.icon" [ngClass]="item.icon"></i>{{ item.label }}
       </a>
     </li>
   </ul>
