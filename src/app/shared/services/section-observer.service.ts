@@ -29,7 +29,7 @@ export class SectionObserverService {
     const sections = document.querySelectorAll('.section');
     const observerOptions = {
       root: null,
-      threshold: 0.5
+      threshold: 0.3
     };
 
     this.observer = new IntersectionObserver((entries) => {

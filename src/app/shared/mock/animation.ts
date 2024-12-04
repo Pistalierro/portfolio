@@ -11,14 +11,14 @@ export const SLIDE_DOWN = trigger('slideDown', [
   ])
 ]);
 
-export const FADE_IN_LEFT_TOP = trigger('fadeInLeftTop', [
+export const FADE_IN_TOP = trigger('fadeInTop', [
   state('hidden', style({
     opacity: 0,
-    transform: 'translateX(-30%) translateY(-30%)'
+    transform: 'translateY(-30%)'
   })),
   state('visible', style({
     opacity: 1,
-    transform: 'translateX(0) translateY(0)'
+    transform: 'translateY(0)'
   })),
   transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
@@ -35,14 +35,14 @@ export const FADE_IN_RIGHT_TOP = trigger('fadeInRightTop', [
   transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
 
-export const FADE_IN_LEFT_BOTTOM = trigger('fadeInLeftBottom', [
+export const FADE_IN_RIGHT = trigger('fadeInRight', [
   state('hidden', style({
     opacity: 0,
-    transform: 'translateX(-30%) translateY(30%)'
+    transform: 'translateX(30%)'
   })),
   state('visible', style({
     opacity: 1,
-    transform: 'translateX(0) translateY(0)'
+    transform: 'translateX(0)'
   })),
   transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
@@ -58,3 +58,53 @@ export const FADE_IN_RIGHT_BOTTOM = trigger('fadeInRightBottom', [
   })),
   transition('hidden <=> visible', [animate('400ms ease-out')])
 ]);
+
+export const FADE_IN_BOTTOM = trigger('fadeInBottom', [
+  state('hidden', style({
+    opacity: 0,
+    transform: 'translateY(30%)'
+  })),
+  state('visible', style({
+    opacity: 1,
+    transform: 'translateY(0)'
+  })),
+  transition('hidden <=> visible', [animate('400ms ease-out')])
+]);
+
+export const FADE_IN_LEFT_BOTTOM = trigger('fadeInLeftBottom', [
+  state('hidden', style({
+    opacity: 0,
+    transform: 'translateX(-30%) translateY(30%)'
+  })),
+  state('visible', style({
+    opacity: 1,
+    transform: 'translateX(0) translateY(0)'
+  })),
+  transition('hidden <=> visible', [animate('400ms ease-out')])
+]);
+
+export const FADE_IN_LEFT = trigger('fadeInLeft', [
+  state('hidden', style({
+    opacity: 0,
+    transform: 'translateX(-30%)'
+  })),
+  state('visible', style({
+    opacity: 1,
+    transform: 'translateX(0)'
+  })),
+  transition('hidden <=> visible', [animate('400ms ease-out')])
+]);
+
+export const FADE_IN_LEFT_TOP = trigger('fadeInLeftTop', [
+  state('hidden', style({
+    opacity: 0,
+    transform: 'translateX(-30%) translateY(-30%)'
+  })),
+  state('visible', style({
+    opacity: 1,
+    transform: 'translateX(0) translateY(0)'
+  })),
+  transition('hidden <=> visible', [animate('400ms ease-out')])
+]);
+
+

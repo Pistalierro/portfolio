@@ -15,7 +15,7 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './projects-list.component.html',
-  styleUrl: './projects-list.component.scss'
+  styleUrl: './projects-list.component.scss',
 })
 export class ProjectsListComponent implements OnInit {
 
