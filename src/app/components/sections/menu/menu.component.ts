@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, inject, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, Input, ViewChild} from '@angular/core';
 import {MenuListInterface} from '../../../shared/types/menuList.interface';
 import {SmoothScrollService} from '../../../shared/services/smooth-scroll.service';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
@@ -16,7 +16,7 @@ import {SectionObserverService} from '../../../shared/services/section-observer.
   styleUrl: './menu.component.scss',
   animations: [SLIDE_DOWN]
 })
-export class MenuComponent implements OnInit, AfterViewInit {
+export class MenuComponent implements AfterViewInit {
 
   menuItems: MenuListInterface[] = MENU_ITEMS;
   activeSection: string = '';
@@ -27,10 +27,6 @@ export class MenuComponent implements OnInit, AfterViewInit {
   @Input() isMenuVisible: boolean = false;
   @ViewChild('mobileMenuContainer') mobileMenuContainer!: ElementRef;
   private sectionObserverService = inject(SectionObserverService);
-
-  ngOnInit(): void {
-
-  }
 
   ngAfterViewInit(): void {
     this.mobileMenuEl = this.mobileMenuContainer.nativeElement;

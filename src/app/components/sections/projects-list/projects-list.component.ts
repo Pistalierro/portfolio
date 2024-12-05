@@ -4,7 +4,7 @@ import {map, Observable} from 'rxjs';
 import {ProjectInterface} from '../../../shared/types/project.interface';
 import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
 import {RouterLink} from '@angular/router';
-import {FADE_IN, FADE_IN_BOTTOM, FADE_IN_RIGHT_BOTTOM} from '../../../shared/mock/animation';
+import {ANIMATION_TRIGGERS, FADE_IN_BOTTOM, FADE_IN_RIGHT_BOTTOM, FADE_IN_SCALE, SLIDE_DOWN} from '../../../shared/mock/animation';
 import {InViewportDirective} from '../../../shared/directives/in-viewport.directive';
 
 @Component({
@@ -19,11 +19,12 @@ import {InViewportDirective} from '../../../shared/directives/in-viewport.direct
   ],
   templateUrl: './projects-list.component.html',
   styleUrl: './projects-list.component.scss',
-  animations: [FADE_IN_BOTTOM, FADE_IN_RIGHT_BOTTOM, FADE_IN]
+  animations: [FADE_IN_BOTTOM, FADE_IN_RIGHT_BOTTOM, FADE_IN_SCALE, SLIDE_DOWN]
 })
 export class ProjectsListComponent implements OnInit {
 
   projectList$!: Observable<ProjectInterface[]>;
+  animationTriggers: string[] = ANIMATION_TRIGGERS;
   private dataService = inject(DataService);
 
   ngOnInit() {

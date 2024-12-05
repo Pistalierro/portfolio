@@ -3,7 +3,7 @@ import {map, Observable} from 'rxjs';
 import {SkillInterface} from '../../../shared/types/skills.interface';
 import {DataService} from '../../../shared/services/data.service';
 import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
-import {FADE_IN_RIGHT_BOTTOM} from '../../../shared/mock/animation';
+import {BOUNCE_IN, FADE_IN_RIGHT_BOTTOM, POP_IN_SKEW, ZOOM_IN_ROTATE} from '../../../shared/mock/animation';
 import {InViewportDirective} from '../../../shared/directives/in-viewport.directive';
 
 @Component({
@@ -17,7 +17,7 @@ import {InViewportDirective} from '../../../shared/directives/in-viewport.direct
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
-  animations: [FADE_IN_RIGHT_BOTTOM]
+  animations: [FADE_IN_RIGHT_BOTTOM, ZOOM_IN_ROTATE, POP_IN_SKEW, BOUNCE_IN]
 })
 export class SkillsComponent implements OnInit {
 

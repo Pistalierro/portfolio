@@ -35,7 +35,6 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
 
-
   onWindowScroll() {
     const header = document.getElementById('header');
     const headerHeight = header ? header.offsetHeight : 0;
