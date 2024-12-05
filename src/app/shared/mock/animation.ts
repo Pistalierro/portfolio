@@ -1,13 +1,29 @@
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
+export const FADE_IN = trigger('fadeInScale', [
+  state('hidden', style({
+    opacity: 0,
+    transform: 'scale(0.75)',
+  })),
+  state('visible', style({
+    opacity: 1,
+    transform: 'scale(1)',
+  })),
+  transition('hidden <=> visible', [animate('500ms ease-out')])
+]);
+
 export const SLIDE_DOWN = trigger('slideDown', [
   transition(':enter', [
-    style({transform: 'translateY(-100%)'}),
+    style({
+      transform: 'translateY(-100%)'
+    }),
     animate('300ms ease-out', style({transform: 'translateY(0)'})),
   ]),
   transition(':leave', [
     style({transform: 'translateY(0%)'}),
-    animate('300ms ease-out', style({transform: 'translateY(-100%)'})),
+    animate('300ms ease-out', style({
+      transform: 'translateY(-100%)'
+    })),
   ])
 ]);
 

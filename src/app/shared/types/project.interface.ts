@@ -10,4 +10,5 @@ export interface ProjectInterface {
   technologies: string[];
   tools: string[];
   blockStates: { [key: number]: 'hidden' | 'visible' };
+  animationTriggers: string;
 }
