@@ -312,5 +312,20 @@
         "DESCRIPTION": "YAGNI (You Aren’t Gonna Need It) — уникаю непотрібної функціональності. Реалізую лише ті фічі, які реально потрібні проєкту."
       }
     }
+  },
+  "FOOTER": {
+    "CONTACTS": {
+      "TITLE": "Зв’язатися зі мною:",
+      "PORTFOLIO": "Портфоліо"
+    },
+    "DESCRIPTION": {
+      "BUILT_WITH": "Створено з використанням Angular, Tailwind CSS і Firebase.",
+      "COPYRIGHT": "© 2024 Anatoliy Sysoienko. Всі права захищені. Телефон: +380 66 426 0466"
+    }
+  },
+  "MODAL": {
+    "TITLE": "",
+    "CONTACTS": {},
+    "FORM": {}
   }
 }

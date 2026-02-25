@@ -13,7 +13,7 @@
       <!-- Контакты -->
       <div
         class="footer__contacts col-span-12 lg:col-span-6 flex flex-col items-center w-full lg:items-start gap-3 sm:gap-4 md:gap-5 lg:ml-48">
-        <h3 class="text-xl sm:text-2xl lg:text-3xl text-white text-shadow-whiteGlow">Связаться со мной:</h3>
+        <h3 class="text-xl sm:text-2xl lg:text-3xl text-white text-shadow-whiteGlow">{{ 'FOOTER.CONTACTS.TITLE' | translate }}</h3>
         <a aria-label="Написать на почту"
            class="text-neutral-300 text-sm xs:text-base sm:text-lg md:text-xl hover:text-shadow-lgLight transition-all duration-300"
            href="mailto:pistalierro@gmail.com">
@@ -46,7 +46,7 @@
            class="text-neutral-300 text-sm xs:text-base sm:text-lg md:text-xl hover:text-shadow-lgLight transition-all duration-300"
            href="https://portfolio-abe24.web.app/" rel="noopener noreferrer"
            target="_blank">
-          <i class="fa-solid fa-globe text-xl xs:text-2xl mr-2 xs:mr-3"></i>Портфолио
+          <i class="fa-solid fa-globe text-xl xs:text-2xl mr-2 xs:mr-3"></i>{{ 'FOOTER.CONTACTS.PORTFOLIO' | translate }}
         </a>
       </div>
 
@@ -60,10 +60,11 @@
     <div class="footer__bottom mt-10 text-center flex flex-col gap-1 relative">
       <p
         class="text-neutral-400 relative after:content-[''] after:block after:h-[2px] after:w-full after:mx-auto after:my-1 after:bg-white/20">
-        Создан с использованием Angular, Tailwind CSS и Firebase.
+        {{ 'FOOTER.DESCRIPTION.BUILT_WITH' | translate }}
       </p>
       <p class="text-neutral-400"><i class="fa-regular fa-copyright mr-1"></i>
-        2024 Anatoliy Sysoienko. Все права защищены. Телефон: +380 66 426 0466</p>
+        {{ 'FOOTER.DESCRIPTION.COPYRIGHT' | translate }}
+      </p>
     </div>
   </div>
 </footer>

@@ -5,11 +5,12 @@ import {ScrollTrackerService} from '../../../../../shared/services/scroll/scroll
 import {ReactiveFormsModule} from '@angular/forms';
 import {ContactsFormComponent} from '../contacts-form/contacts-form.component';
 import {ContactsInfoComponent} from '../contacts-info/contacts-info.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contacts-modal',
   standalone: true,
-  imports: [NgClass, NgIf, ReactiveFormsModule, ContactsFormComponent, ContactsInfoComponent],
+  imports: [NgClass, NgIf, ReactiveFormsModule, ContactsFormComponent, ContactsInfoComponent, TranslatePipe],
   templateUrl: './contacts-modal.component.html',
   styleUrl: './contacts-modal.component.scss',
 })

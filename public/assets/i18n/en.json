@@ -313,5 +313,15 @@
         "DESCRIPTION": "YAGNI (You Aren't Gonna Need It) — I avoid unnecessary functionality and implement only the features the project truly needs."
       }
     }
+  },
+  "FOOTER": {
+    "CONTACTS": {
+      "TITLE": "Get in touch:",
+      "PORTFOLIO": "Portfolio"
+    },
+    "DESCRIPTION": {
+      "BUILT_WITH": "Crafted using Angular, Tailwind CSS and Firebase.",
+      "COPYRIGHT": "© 2024 Anatoliy Sysoienko. All rights reserved. Phone: +380 66 426 0466"
+    }
   }
 }
