@@ -21,11 +21,6 @@ export class ProjectDetailsComponent implements OnInit, AfterViewInit {
   project!: ProjectDetailedInterface;
   scrollTrackerService = inject(ScrollTrackerService);
   private activatedRoute = inject(ActivatedRoute);
-  readonly hiddenLinksSlug = 'crud-with-material-ui';
-  get showProjectLinks(): boolean {
-    return this.project?.slug !== this.hiddenLinksSlug;
-  }
-
 
   ngOnInit(): void {
     this.project = this.activatedRoute.snapshot.data['project'];

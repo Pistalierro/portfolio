@@ -56,7 +56,7 @@
 
           <div class="project__facts-actions flex flex-col items-center justify-center gap-5 w-full pb-5">
 
-            <div *ngIf="showProjectLinks && project.repositoryUrl" class="w-full">
+            <div *ngIf="project.repositoryUrl" class="w-full">
               <a [href]="project.repositoryUrl"
                  class="w-full  max-w-[250px] mx-auto block text-center text-white text-sm font-semibold  border  bg-white/20 py-2 px-4 rounded-full uppercase hover:bg-white/30 transition duration-200 hover:scale-105"
                  target="_blank">
@@ -64,7 +64,7 @@
               </a>
             </div>
 
-            <div *ngIf="showProjectLinks" class="w-full">
+            <div *ngIf="project.url" class="w-full">
               <a [href]="project.url"
                  class="w-full  max-w-[250px] mx-auto block text-center text-white text-sm font-semibold  border  bg-white/20 py-2 px-4 rounded-full uppercase
                  hover:bg-white/30 transition duration-200 hover:scale-105"
