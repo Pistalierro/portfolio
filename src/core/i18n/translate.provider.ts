@@ -9,16 +9,15 @@ export function createTranslateLoader(http: HttpClient) {
 
 export function initTranslate(translate: TranslateService) {
   return () => {
-    const availableLangs: string[] = ['ua', 'en', 'ru'];
+    const availableLangs: string[] = ['ru', 'ua', 'en', 'es', 'de'];
     translate.addLangs(availableLangs);
     translate.setDefaultLang('en');
-    const browserLang = localStorage.getItem('lang') || translate.getBrowserLang() || 'en';
 
-    if (!availableLangs.includes(browserLang)) {
-      translate.use('ru');
-    } else {
-      translate.use(browserLang);
-    }
+    const storedLang = localStorage.getItem('lang');
+    const browserLang = translate.getBrowserLang();
+    const selectedLang = storedLang || browserLang || 'en';
+
+    translate.use(availableLangs.includes(selectedLang) ? selectedLang : 'en');
   };
 }
 
