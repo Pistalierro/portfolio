@@ -198,8 +198,8 @@ export const PROJECTS: ProjectDetailedInterface[] = [
       thumbnail: '/img/projects/crud_material_thumbnail.webp',
       large: '/img/projects/crud_material_large.webp'
     },
-    url: 'https://crud-with-materialui-9a269.web.app',
-    repositoryUrl: 'https://github.com/Pistalierro/crud-with-material',
+    url: 'https://crud-material-d7289.web.app/',
+    repositoryUrl: 'https://github.com/Pistalierro/crud-material',
     details: {
       what: 'PROJECT.CRUD_MATERIAL.DETAILS.ABOUT_PROJECT',
       overview: 'PROJECT.CRUD_MATERIAL.DETAILS.OVERVIEW_PROJECT',
