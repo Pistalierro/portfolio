@@ -140,12 +140,12 @@
       "TITLE": "CRUD with Material UI",
       "TYPE": "Project Type: CRUD",
       "TYPE_DESCRIPTION": "An application with create, read, update, and delete operations.",
-      "DESCRIPTION_SHORT": "Angular CRUD app with product table, Angular Material components, and real-time Firestore sync.",
+      "DESCRIPTION_SHORT": "Modern Angular 20 CRUD app with Angular Material, role-based access, and Firestore-backed public/sandbox catalogs.",
       "DETAILS": {
-        "ABOUT_PROJECT": "A demo application with CRUD functionality for managing a list of products. Built with Angular using Angular Material and real-time Firestore integration.",
-        "OVERVIEW_PROJECT": "The application implements a full CRUD cycle: adding, editing, deleting, filtering, sorting, and paginating products. New items are added through a dialog box with a form that includes a `DatePicker` and validation. Data is stored in Firestore and synced in real-time.",
-        "SPECIAL": "The project is built with Angular using Angular Material and `Reactive Forms`. Library components are used in their default form without customization. The interface is responsive and designed for fast and intuitive interaction with the data table.",
-        "CHALLENGES": "The project provided solid practice with `Reactive Forms`, dialogs, and complex input forms. It was the first time using Firestore as the main state source, with data synchronization and reactive table display.",
+        "ABOUT_PROJECT": "A rewritten demo application for managing an electronics catalog with full CRUD operations. Built with Angular 20, Angular Material, and Firebase Firestore, with separate public and sandbox data zones.",
+        "OVERVIEW_PROJECT": "The app supports create, read, update, and delete operations through dialogs and reactive forms, plus filtering, sorting, and pagination in a Material table. Users sign in anonymously by default, while admin access is available via Google sign-in with custom claims. Data is synchronized in real time from Firestore collections.",
+        "SPECIAL": "The project uses modern Angular architecture: standalone components, `inject()` API, signals, and new template control flow (`@if`, `@for`). Access logic is role-based: admins can manage public and sandbox records, regular users can manage only their own sandbox data. UX includes localized paginator labels, snackbars, responsive layout, and custom SCSS organization.",
+        "CHALLENGES": "The main challenge was designing secure role-based access across frontend logic and Firestore rules while combining public and per-user sandbox data in one interface. Additional focus was on handling asynchronous CRUD flows, clear user feedback, and maintaining a clean component/service structure after the full rewrite.",
         "STATUS": "Completed"
       }
     },
@@ -220,7 +220,7 @@
       "DESCRIPTION": "A template showcasing CSS Grid Layout capabilities with a focus on responsive design. Supports desktop and mobile devices and includes basic interactive elements using jQuery."
     },
     "CRUD_MATERIAL": {
-      "DESCRIPTION": "An app for managing a product database using Angular Material. Includes functionality for adding, editing, and deleting records. Uses reactive forms, custom pipes, and a thoughtfully designed adaptive layout."
+      "DESCRIPTION": "Modern Angular 20 CRUD app for managing an electronics catalog with Angular Material and Firebase Firestore. Includes role-based access (anonymous user/admin), reactive forms, filtering, sorting, and pagination. Supports public demo data and personal sandbox records."
     },
     "KINOZAL": {
       "DESCRIPTION": "A responsive cinema website template built with Bootstrap 5.3.3. Uses a flexible flexbox grid, authorization and search forms, and basic user interaction logic. Great as a starting point for movie-related projects."
