@@ -72,6 +72,8 @@ export class ContactsFormComponent implements OnInit {
 
     if (control.valid) return null;
 
+    if (field === 'message') return null;
+
     const messages: Record<string, string> = {
       required: 'MODAL.FORM.ERRORS.required',
       minlength: 'MODAL.FORM.ERRORS.minlength',
@@ -94,7 +96,7 @@ export class ContactsFormComponent implements OnInit {
         updateOn: 'change',
       }),
       message: this.fb.control('', {
-        validators: [Validators.required],
+        validators: [],
         updateOn: 'change',
       }),
     });

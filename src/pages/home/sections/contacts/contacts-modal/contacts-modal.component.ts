@@ -5,7 +5,7 @@ import {ScrollTrackerService} from '../../../../../shared/services/scroll/scroll
 import {ReactiveFormsModule} from '@angular/forms';
 import {ContactsFormComponent} from '../contacts-form/contacts-form.component';
 import {ContactsInfoComponent} from '../contacts-info/contacts-info.component';
-import {TranslatePipe} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contacts-modal',
@@ -18,12 +18,22 @@ export class ContactsModalComponent implements AfterViewChecked {
 
   contactsModalService = inject(ContactsModalService);
   private scrollTrackerService = inject(ScrollTrackerService);
+  private translateService = inject(TranslateService);
 
   private wasTriggered = false;
 
   @HostListener('document:keydown.escape', ['$event'])
   onEsc(event: KeyboardEvent): void {
     this.contactsModalService.close();
+  }
+
+  getModalTitle(): string {
+    const title = this.translateService.instant('MODAL.TITLE');
+    if (!title || title === 'MODAL.TITLE') {
+      return this.translateService.instant('NAVBAR.CONTACTS');
+    }
+
+    return title;
   }
 
   ngAfterViewChecked(): void {
