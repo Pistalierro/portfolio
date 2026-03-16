@@ -9,16 +9,16 @@
 
     <label
       class="text-sm xs:text-base md:text-lg lg:text-xl w-[60px] xs:w-[70px] lg:w-[80px] transition-all duration-300 ease-in-out"
-      for="name">Имя:</label>
+      for="name">{{ 'MODAL.FORM.NAME_LABEL' | translate }}</label>
 
     <input
       class="text-xs xs:text-sm lg:text-base border border-white/40 px-2 py-1 xs:px-3 xs:py-1.5 lg:px-4 lg:py-2 rounded-md w-full bg-black/30 focus:outline-none focus:ring-1 focus:ring-white focus:shadow-whiteGlow transition-all duration-300 ease-in-out"
-      formControlName="name" id="name" placeholder="Ваше имя..." type="text"/>
+      formControlName="name" id="name" [attr.placeholder]="'MODAL.FORM.NAME_PLACEHOLDER' | translate" type="text"/>
   </div>
 
   <div class="h-2 mt-[-4px] xs:mt-[-6px] lg:mt-[-8px] mb-2 ml-[calc(60px+0.5rem)] xs:ml-[calc(70px+0.5rem)] lg:ml-[calc(80px+0.75rem)]">
     <small *ngIf="getErrorMessage('name')" class="text-red-500 text-[11px] xs:text-xs lg:text-sm leading-none">
-      {{ getErrorMessage('name') }}
+      {{ (getErrorMessage('name') ?? '') | translate }}
     </small>
   </div>
 
@@ -31,16 +31,16 @@
 
     <label
       class="text-sm xs:text-base md:text-lg lg:text-xl w-[60px] xs:w-[70px] lg:w-[80px] transition-all duration-300 ease-in-out"
-      for="email">Email:</label>
+      for="email">{{ 'MODAL.FORM.EMAIL_LABEL' | translate }}</label>
 
     <input
       class="text-xs xs:text-sm lg:text-base border border-white/40 px-2 py-1 xs:px-3 xs:py-1.5 lg:px-4 lg:py-2 rounded-md w-full bg-black/30 focus:outline-none focus:ring-1 focus:ring-white focus:shadow-whiteGlow transition-all duration-300 ease-in-out"
-      formControlName="email" id="email" placeholder="Укажите e-mail..." type="email"/>
+      formControlName="email" id="email" [attr.placeholder]="'MODAL.FORM.EMAIL_PLACEHOLDER' | translate" type="email"/>
   </div>
 
   <div class="h-2 mt-[-4px] xs:mt-[-6px] lg:mt-[-8px] mb-2 ml-[calc(60px+0.5rem)] xs:ml-[calc(70px+0.5rem)] lg:ml-[calc(80px+0.75rem)]">
     <small *ngIf="getErrorMessage('email')" class="text-red-500 text-[11px] xs:text-xs lg:text-sm leading-none">
-      {{ getErrorMessage('email') }}
+      {{ (getErrorMessage('email') ?? '') | translate }}
     </small>
   </div>
 
@@ -53,19 +53,19 @@
 
     <label
       class="text-sm xs:text-base md:text-lg lg:text-xl w-[60px] xs:w-[70px] lg:w-[80px] mt-1 transition-all duration-300 ease-in-out"
-      for="message">Текст:</label>
+      for="message">{{ 'MODAL.FORM.MESSAGE_LABEL' | translate }}</label>
 
     <textarea
       cdkAutosizeMaxRows="5"
       cdkAutosizeMinRows="2"
       cdkTextareaAutosize
       class="text-xs xs:text-sm lg:text-base resize-none border border-white/40 px-2 py-1 xs:px-3 xs:py-1.5 lg:px-4 lg:py-2 rounded-md w-full bg-black/30 focus:outline-none focus:ring-1 focus:ring-white focus:shadow-whiteGlow transition-all duration-300 ease-in-out"
-      formControlName="message" id="message" placeholder="Ваше сообщение..."></textarea>
+      formControlName="message" id="message" [attr.placeholder]="'MODAL.FORM.MESSAGE_PLACEHOLDER' | translate"></textarea>
   </div>
 
   <div class="h-2 mt-[-4px] xs:mt-[-6px] lg:mt-[-8px] mb-2 ml-[calc(60px+0.5rem)] xs:ml-[calc(70px+0.5rem)] lg:ml-[calc(80px+0.75rem)]">
     <small *ngIf="getErrorMessage('message')" class="text-red-500 text-[11px] xs:text-xs lg:text-sm leading-none">
-      {{ getErrorMessage('message') }}
+      {{ (getErrorMessage('message') ?? '') | translate }}
     </small>
   </div>
 
@@ -82,7 +82,7 @@
       class="w-9/12 xs:w-[200px] md:w-[250px] lg:w-[300px] px-2.5 py-1.5 xs:px-3 xs:py-2 lg:px-4 lg:py-2.5 text-xs xs:text-sm lg:text-base rounded-xl border-2 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white invisible opacity-0"
       data-repeat
       type="submit">
-      {{ isSubmitting() ? 'Отправка...' : 'Отправить' }}
+      {{ isSubmitting() ? ('MODAL.FORM.SUBMITTING' | translate) : ('MODAL.FORM.SUBMIT' | translate) }}
     </button>
   </div>
 
@@ -92,7 +92,7 @@
       [class.opacity-100]="isSuccess()"
       class="transition-opacity duration-500 text-green-500 text-end text-xs xs:text-sm lg:text-base"
     >
-      Сообщение успешно отправлено!
+      {{ 'MODAL.FORM.SUCCESS' | translate }}
     </p>
   </div>
 

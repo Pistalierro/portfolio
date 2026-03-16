@@ -46,7 +46,8 @@
       "SELF": {
         "TITLE": "Самообразование",
         "DESCRIPTION1": "Pet-проекты, документация, практика",
-        "DESCRIPTION2": "Регулярное развитие и чтение гайдов"
+        "DESCRIPTION2": "Регулярное развитие и чтение гайдов",
+        "ICON": "📘"
       }
     },
     "CERTIFICATE": {
@@ -328,6 +329,23 @@
     "CONTACTS": {
       "PORTFOLIO": "Портфолио"
     },
-    "FORM": {}
+    "FORM": {
+      "ERRORS": {
+        "required": "Обязательно!",
+        "minlength": "Минимум 4 символа!",
+        "maxlength": "Не более 25 символов!",
+        "invalidEmail": "Невалидный email!"
+      },
+      "NAME_LABEL": "Имя:",
+      "NAME_PLACEHOLDER": "Ваше имя...",
+      "EMAIL_LABEL": "Email:",
+      "EMAIL_PLACEHOLDER": "Укажите e-mail...",
+      "MESSAGE_LABEL": "Текст:",
+      "MESSAGE_PLACEHOLDER": "Ваше сообщение...",
+      "SUBMIT": "Отправить",
+      "SUBMITTING": "Отправка...",
+      "SUCCESS": "Сообщение успешно отправлено!"
+    },
+    "CLOSE_LABEL": "Закрыть модалку"
   }
 }

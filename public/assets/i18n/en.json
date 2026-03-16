@@ -323,5 +323,29 @@
       "BUILT_WITH": "Crafted using Angular, Tailwind CSS and Firebase.",
       "COPYRIGHT": "© 2024 Anatoliy Sysoienko. All rights reserved. Phone: +380 66 426 0466"
     }
+  },
+  "MODAL": {
+    "CONTACTS": {
+      "PORTFOLIO": "Portfolio"
+    },
+    "FORM": {
+      "ERRORS": {
+        "required": "Required!",
+        "minlength": "Minimum 4 characters!",
+        "maxlength": "Maximum 25 characters!",
+        "invalidEmail": "Invalid email!"
+      },
+      "NAME_LABEL": "Name:",
+      "NAME_PLACEHOLDER": "Your name...",
+      "EMAIL_LABEL": "Email:",
+      "EMAIL_PLACEHOLDER": "Enter your e-mail...",
+      "MESSAGE_LABEL": "Message:",
+      "MESSAGE_PLACEHOLDER": "Your message...",
+      "SUBMIT": "Send",
+      "SUBMITTING": "Sending...",
+      "SUCCESS": "Message sent successfully!"
+    },
+    "TITLE": "How to contact me",
+    "CLOSE_LABEL": "Close modal"
   }
 }

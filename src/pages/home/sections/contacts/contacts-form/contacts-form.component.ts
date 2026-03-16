@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import {customEmailValidator} from '../../../../../shared/utils/custom-email-validator.helpers';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {NgClass, NgIf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'form-contacts',
@@ -12,7 +13,8 @@ import {NgClass, NgIf} from '@angular/common';
     CdkTextareaAutosize,
     NgIf,
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    TranslatePipe
   ],
   templateUrl: './contacts-form.component.html',
   styleUrl: './contacts-form.component.scss'
@@ -71,10 +73,10 @@ export class ContactsFormComponent implements OnInit {
     if (control.valid) return null;
 
     const messages: Record<string, string> = {
-      required: 'Обязательно!',
-      minlength: 'Минимум 4 символа!',
-      maxlength: 'Не более 25 символов!',
-      invalidEmail: 'Невалидный email!',
+      required: 'MODAL.FORM.ERRORS.required',
+      minlength: 'MODAL.FORM.ERRORS.minlength',
+      maxlength: 'MODAL.FORM.ERRORS.maxlength',
+      invalidEmail: 'MODAL.FORM.ERRORS.invalidEmail',
     };
 
     const errorKey = Object.keys(control.errors || {})[0];
