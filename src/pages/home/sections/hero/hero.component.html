@@ -34,8 +34,6 @@
                 [style.animationDelay]="letter.delay + 's'">
                 {{ letter.char }}
               </span>
-
-              <!-- Каретка. Показываем, если typedLetterIndex = letterIndexGlobal, а текст ещё не весь допечатан -->
               <span
                 *ngIf="
                   typedLetterIndex === letter.letterIndexGlobal
@@ -48,7 +46,6 @@
         </p>
       </div>
 
-      <!-- Кнопка в конце -->
       <div class="hero__content-actions">
         <a
           (click)="scrollService.scrollTo('about')"
