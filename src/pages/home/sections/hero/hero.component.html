@@ -46,10 +46,15 @@
         </p>
       </div>
 
-      <div class="hero__content-actions">
+      <div class="hero__content-actions flex flex-wrap items-center justify-center gap-4">
         <a
           (click)="scrollService.scrollTo('about')"
           class="text-sm md:text-base lg:text-lg border rounded-full uppercase select-none cursor-pointer hover:shadow-light bg-white/20 hover:bg-white/30 transition-all duration-200 py-2 px-6 transform hover:scale-105 inline-block">{{ 'HERO.ABOUT_LINK' | translate }}</a>
+        <a
+          class="text-sm md:text-base lg:text-lg border rounded-full uppercase select-none cursor-pointer hover:shadow-light bg-white/10 hover:bg-white/20 transition-all duration-200 py-2 px-6 transform hover:scale-105 inline-block"
+          href="https://www.linkedin.com/in/anatoliy-sysoienko-5a2029252/overlay/1773487364130/single-media-viewer/?profileId=ACoAAD5LwgoB8NnV7Zr1Pdet1e4FRczZhm3KTQ8"
+          rel="noopener noreferrer"
+          target="_blank">{{ 'HERO.CV_LINK' | translate }}</a>
       </div>
     </div>
   </div>

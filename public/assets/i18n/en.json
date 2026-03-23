@@ -4,6 +4,7 @@
     "PORTFOLIO": "Portfolio",
     "SKILLS": "Skills",
     "CONTACTS": "Contacts",
+    "CV": "CV",
     "LANGUAGE": "Select Language:"
   },
   "HERO": {
@@ -12,7 +13,8 @@
       "Frontend is more than just code. It's magic when design and technology work in unison.",
       "I help ideas come to life through modern, beautiful, and responsive interfaces."
     ],
-    "ABOUT_LINK": "Learn more about me"
+    "ABOUT_LINK": "Learn more about me",
+    "CV_LINK": "View CV"
   },
   "ABOUT": {
     "TITLE": "About Me",
