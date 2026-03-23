@@ -49,13 +49,14 @@
 
     <!-- SVG ЛИНИИ: рендерятся только когда showLines = true -->
     <svg class="absolute inset-0 w-full h-full pointer-events-none z-10">
-      <ng-container *ngFor="let pos of radialLines">
+      <ng-container *ngFor="let line of radialLines">
         <line
-          [@drawLine]="linesReady ? 'ready' : 'void'"
+          [attr.stroke-dasharray]="line.length"
+          [attr.stroke-dashoffset]="line.currentOffset"
           [attr.x1]="center.x"
-          [attr.x2]="pos.x"
+          [attr.x2]="line.x"
           [attr.y1]="center.y"
-          [attr.y2]="pos.y"
+          [attr.y2]="line.y"
           stroke="currentColor"
           stroke-linecap="round"
           stroke-width="2"

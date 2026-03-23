@@ -9,6 +9,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'form-contacts',
+  standalone: true,
   imports: [
     CdkTextareaAutosize,
     NgIf,

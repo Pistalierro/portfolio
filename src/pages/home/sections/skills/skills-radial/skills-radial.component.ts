@@ -4,6 +4,7 @@ import {
   ElementRef,
   EventEmitter,
   inject,
+  OnDestroy,
   OnInit,
   Output,
   QueryList,
@@ -13,7 +14,7 @@ import {
 import {SkillCategoryType, SkillInterface} from '../../../../../types/skills-interface';
 import {SKILL_CATEGORIES, SKILLS} from '../../../../../data/skills';
 import {ScrollTrackerService} from '../../../../../shared/services/scroll/scroll-tracker.service';
-import {drawLineAnimation, skillPopTrigger} from '../../../../../shared/animations/angular.animations';
+import {skillPopTrigger} from '../../../../../shared/animations/angular.animations';
 import {TranslatePipe} from '@ngx-translate/core';
 import {NgClass, NgForOf, NgIf, NgStyle} from '@angular/common';
 
@@ -23,9 +24,9 @@ import {NgClass, NgForOf, NgIf, NgStyle} from '@angular/common';
   imports: [NgForOf, NgClass, NgIf, TranslatePipe, NgStyle],
   templateUrl: './skills-radial.component.html',
   styleUrl: './skills-radial.component.scss',
-  animations: [drawLineAnimation, skillPopTrigger]
+  animations: [skillPopTrigger]
 })
-export class SkillsRadialComponent implements OnInit, AfterViewInit {
+export class SkillsRadialComponent implements OnInit, AfterViewInit, OnDestroy {
   categories: SkillCategoryType[] = SKILL_CATEGORIES;
   skills: SkillInterface[] = SKILLS;
 
@@ -33,8 +34,10 @@ export class SkillsRadialComponent implements OnInit, AfterViewInit {
   selectedSkill!: string;
 
   center = {x: 0, y: 0};
-  radialLines: { x: number; y: number }[] = [];
-  firstRender = true;
+  radialLines: { x: number; y: number; length: number; currentOffset: number }[] = [];
+  private lineAnimationFrameId: number | null = null;
+  private readonly lineAnimationDurationMs = 360;
+  private readonly lineAnimationDelayMs = 40;
 
   animatedSkillIndexes: number[] = [];
   hovered: boolean[] = [];
@@ -67,12 +70,17 @@ export class SkillsRadialComponent implements OnInit, AfterViewInit {
     this.onSelectCategory(this.selectedCategory);
   }
 
+  ngOnDestroy(): void {
+    this.stopLineAnimation();
+  }
+
 
   onSelectCategory(category: SkillCategoryType) {
     this.selectedCategory = category;
     this.selectedSkill = '';
     this.radialLines = [];
     this.linesReady = false;
+    this.stopLineAnimation();
 
     const skills = this.filteredSkills;
     if (!this.generatedLayouts[category]) {
@@ -93,27 +101,17 @@ export class SkillsRadialComponent implements OnInit, AfterViewInit {
       skills.forEach((_, i) => {
         this.positionStyles[i] = this.getPositionStyle(i);
       });
+
+      // Start line drawing in the same render cycle as skill bubble placement.
+      this.calculateLines();
+      this.linesReady = true;
+      this.animateLines();
     });
 
     setTimeout(() => {
       this.animatedSkillIndexes = skills.map((_, i) => i);
     }, 20);
 
-    const renderLines = () => {
-      this.calculateLines();
-      this.linesReady = true;
-    };
-
-    if (this.firstRender) {
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          renderLines();
-          this.firstRender = false;
-        }, 300);
-      });
-    } else {
-      setTimeout(renderLines, 300);
-    }
   }
 
   onSelectedSkill(skill: string) {
@@ -175,7 +173,51 @@ export class SkillsRadialComponent implements OnInit, AfterViewInit {
       y: centerRect.top + centerRect.height / 2 - parentRect.top
     };
     this.radialLines = this.generatedLayouts[this.selectedCategory]
-      .map(p => ({x: this.center.x + p.x, y: this.center.y + p.y}));
+      .map(p => {
+        const x = this.center.x + p.x;
+        const y = this.center.y + p.y;
+        const length = Math.hypot(x - this.center.x, y - this.center.y);
+
+        return {
+          x,
+          y,
+          length,
+          currentOffset: length
+        };
+      });
+  }
+
+  private animateLines(): void {
+    this.stopLineAnimation();
+
+    const start = performance.now();
+
+    const animateStep = (now: number) => {
+      const elapsed = now - start - this.lineAnimationDelayMs;
+      const progress = Math.min(Math.max(elapsed / this.lineAnimationDurationMs, 0), 1);
+      // Softer easing so line growth does not outrun skill bubble pop.
+      const eased = 1 - Math.pow(1 - progress, 2);
+      const remaining = 1 - eased;
+
+      this.radialLines.forEach(line => {
+        line.currentOffset = line.length * remaining;
+      });
+
+      if (progress < 1) {
+        this.lineAnimationFrameId = requestAnimationFrame(animateStep);
+      } else {
+        this.lineAnimationFrameId = null;
+      }
+    };
+
+    this.lineAnimationFrameId = requestAnimationFrame(animateStep);
+  }
+
+  private stopLineAnimation(): void {
+    if (this.lineAnimationFrameId !== null) {
+      cancelAnimationFrame(this.lineAnimationFrameId);
+      this.lineAnimationFrameId = null;
+    }
   }
 
 }

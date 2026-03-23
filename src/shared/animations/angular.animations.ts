@@ -1,15 +1,4 @@
-import {animate, animation, state, style, transition, trigger, useAnimation} from '@angular/animations';
-
-export const drawLineAnimation = trigger('drawLine', [
-  state('ready', style({'attr.stroke-dashoffset': 0})),
-  transition('* => ready', [
-    style({
-      'attr.stroke-dasharray': '200, 200',
-      'attr.stroke-dashoffset': 200
-    }),
-    animate('0.6s ease-out')
-  ])
-]);
+import {animate, animation, style, transition, trigger, useAnimation} from '@angular/animations';
 
 export const skillPopTrigger = trigger('skillPop', [
   transition(':enter', useAnimation(
