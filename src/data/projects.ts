@@ -4,6 +4,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 1,
     title: 'PROJECT.PORTFOLIO.TITLE',
+    shortTitle: 'PROJECT.PORTFOLIO.SHORT_TITLE',
     slug: 'portfolio',
     type: 'PROJECT.PORTFOLIO.TYPE',
     typeDescription: 'PROJECT.PORTFOLIO.TYPE_DESCRIPTION',
@@ -41,6 +42,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 2,
     title: 'PROJECT.WEATHER_FORECAST.TITLE',
+    shortTitle: 'PROJECT.WEATHER_FORECAST.SHORT_TITLE',
     slug: 'weather-forecast',
     type: 'PROJECT.WEATHER_FORECAST.TYPE',
     typeDescription: 'PROJECT.WEATHER_FORECAST.TYPE_DESCRIPTION',
@@ -76,6 +78,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 3,
     title: 'PROJECT.WOT_BLITZ_STATISTICS.TITLE',
+    shortTitle: 'PROJECT.WOT_BLITZ_STATISTICS.SHORT_TITLE',
     slug: 'wot-blitz-statistics',
     type: 'PROJECT.WOT_BLITZ_STATISTICS.TYPE',
     typeDescription: 'PROJECT.WOT_BLITZ_STATISTICS.TYPE_DESCRIPTION',
@@ -116,6 +119,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 4,
     title: 'PROJECT.JS_SLIDER.TITLE',
+    shortTitle: 'PROJECT.JS_SLIDER.SHORT_TITLE',
     slug: 'js-slider',
     type: 'PROJECT.JS_SLIDER.TYPE',
     typeDescription: 'PROJECT.JS_SLIDER.TYPE_DESCRIPTION',
@@ -144,6 +148,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 5,
     title: 'PROJECT.GRID_TEMPLATE.TITLE',
+    shortTitle: 'PROJECT.GRID_TEMPLATE.SHORT_TITLE',
     slug: 'grid-template',
     type: 'PROJECT.GRID_TEMPLATE.TYPE',
     typeDescription: 'PROJECT.GRID_TEMPLATE.TYPE_DESCRIPTION',
@@ -175,6 +180,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 6,
     title: 'PROJECT.CRUD_MATERIAL.TITLE',
+    shortTitle: 'PROJECT.CRUD_MATERIAL.SHORT_TITLE',
     slug: 'crud-with-material-ui',
     type: 'PROJECT.CRUD_MATERIAL.TYPE',
     typeDescription: 'PROJECT.CRUD_MATERIAL.TYPE_DESCRIPTION',
@@ -211,6 +217,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 7,
     title: 'PROJECT.KINOZAL.TITLE',
+    shortTitle: 'PROJECT.KINOZAL.SHORT_TITLE',
     slug: 'kinozal',
     type: 'PROJECT.KINOZAL.TYPE',
     typeDescription: 'PROJECT.KINOZAL.TYPE_DESCRIPTION',
@@ -241,6 +248,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 8,
     title: 'PROJECT.MOVIE_SEARCH.TITLE',
+    shortTitle: 'PROJECT.MOVIE_SEARCH.SHORT_TITLE',
     slug: 'movie-search',
     type: 'PROJECT.MOVIE_SEARCH.TYPE',
     typeDescription: 'PROJECT.MOVIE_SEARCH.TYPE_DESCRIPTION',
@@ -273,6 +281,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 9,
     title: 'PROJECT.CRUD_BOOTSTRAP.TITLE',
+    shortTitle: 'PROJECT.CRUD_BOOTSTRAP.SHORT_TITLE',
     slug: 'crud-with-bootstrap',
     type: 'PROJECT.CRUD_BOOTSTRAP.TYPE',
     typeDescription: 'PROJECT.CRUD_BOOTSTRAP.TYPE_DESCRIPTION',
@@ -309,6 +318,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
   {
     id: 10,
     title: 'PROJECT.CURRENCY_CONVERTER.TITLE',
+    shortTitle: 'PROJECT.CURRENCY_CONVERTER.SHORT_TITLE',
     slug: 'currency-converter',
     type: 'PROJECT.CURRENCY_CONVERTER.TYPE',
     typeDescription: 'PROJECT.CURRENCY_CONVERTER.TYPE_DESCRIPTION',

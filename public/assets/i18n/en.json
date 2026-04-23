@@ -73,6 +73,7 @@
     "DETAILS": "Details",
     "PORTFOLIO": {
       "TITLE": "Personal Portfolio",
+      "SHORT_TITLE": "Portfolio",
       "TYPE": "Project type: SPA",
       "TYPE_DESCRIPTION": "A single-page application where all content is loaded without page reload.",
       "DESCRIPTION_SHORT": "Multilingual SPA portfolio with advanced animations, filtering, and synchronized content. Built with a focus on UI/UX, custom features, and skill visualization.",
@@ -87,6 +88,7 @@
     },
     "WOT_BLITZ_STATISTICS": {
       "TITLE": "WoT Blitz Statistics",
+      "SHORT_TITLE": "WoT Blitz Stats",
       "TYPE": "Project Type: WoT Blitz Statistics",
       "TYPE_DESCRIPTION": "A single-page application where all content is loaded without page reloads.",
       "DESCRIPTION_SHORT": "A WoT Blitz stats tracker with advanced metrics, session analysis, ratings, and multilingual support.",
@@ -101,6 +103,7 @@
     },
     "WEATHER_FORECAST": {
       "TITLE": "Weather Forecast",
+      "SHORT_TITLE": "Weather",
       "TYPE": "Project Type: SPA",
       "TYPE_DESCRIPTION": "A single-page application where all content is loaded without page reloads.",
       "DESCRIPTION_SHORT": "Interactive weather app with geolocation, hourly breakdown, and a responsive interface.",
@@ -114,6 +117,7 @@
     },
     "JS_SLIDER": {
       "TITLE": "JS Slider",
+      "SHORT_TITLE": "JS Slider",
       "TYPE": "Project Type: UI Component",
       "TYPE_DESCRIPTION": "A reusable visual component (e.g., slider or card), designed for embedding in other projects.",
       "DESCRIPTION_SHORT": "Custom responsive slider in vanilla JavaScript with swipe, autoplay, and navigation support.",
@@ -127,6 +131,7 @@
     },
     "GRID_TEMPLATE": {
       "TITLE": "Grid Template",
+      "SHORT_TITLE": "Grid Template",
       "TYPE": "Project Type: Landing Page",
       "TYPE_DESCRIPTION": "A one-page site or promo page focused on visuals and presentation, usually without logic.",
       "DESCRIPTION_SHORT": "Landing page template with responsive CSS Grid layout and mobile hamburger menu.",
@@ -140,6 +145,7 @@
     },
     "CRUD_MATERIAL": {
       "TITLE": "CRUD with Angular Material",
+      "SHORT_TITLE": "Angular Material CRUD",
       "TYPE": "Project Type: CRUD",
       "TYPE_DESCRIPTION": "An application with create, read, update, and delete operations.",
       "DESCRIPTION_SHORT": "Modern Angular 20 CRUD app with Angular Material, role-based access, and Firestore-backed public/sandbox catalogs.",
@@ -153,6 +159,7 @@
     },
     "KINOZAL": {
       "TITLE": "Kinozal",
+      "SHORT_TITLE": "Kinozal",
       "TYPE": "Project Type: Template",
       "TYPE_DESCRIPTION": "A ready-made layout or educational template without active logic. Used to showcase layout skills.",
       "DESCRIPTION_SHORT": "Educational cinema site template built with Bootstrap 5, responsive layout, and SCSS theming.",
@@ -166,6 +173,7 @@
     },
     "MOVIE_SEARCH": {
       "TITLE": "Movie Search",
+      "SHORT_TITLE": "Movie Search",
       "TYPE": "Project Type: SPA",
       "TYPE_DESCRIPTION": "A single-page application where all content is loaded without page reloads.",
       "DESCRIPTION_SHORT": "Movie search SPA using OMDb API, dynamic DOM rendering, and responsive SCSS styling.",
@@ -179,6 +187,7 @@
     },
     "CRUD_BOOTSTRAP": {
       "TITLE": "CRUD with Bootstrap",
+      "SHORT_TITLE": "Bootstrap CRUD",
       "TYPE": "Project Type: CRUD",
       "TYPE_DESCRIPTION": "An application with create, read, update, and delete operations.",
       "DESCRIPTION_SHORT": "Angular CRUD app for user management with Bootstrap 5, Reactive Forms, and Firestore integration.",
@@ -192,6 +201,7 @@
     },
     "CURRENCY_CONVERTER": {
       "TITLE": "Currency Converter",
+      "SHORT_TITLE": "Currency Converter",
       "TYPE": "Project Type: SPA",
       "TYPE_DESCRIPTION": "A single-page application where all content is loaded without page reloads.",
       "DESCRIPTION_SHORT": "Minimalist Angular currency converter with Tailwind CSS, signals, and real-time NBU exchange rates.",

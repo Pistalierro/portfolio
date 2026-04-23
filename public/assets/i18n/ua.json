@@ -73,6 +73,7 @@
     "DETAILS": "Детальніше",
     "PORTFOLIO": {
       "TITLE": "Особисте портфоліо",
+      "SHORT_TITLE": "Портфоліо",
       "TYPE": "Тип проєкту: SPA",
       "TYPE_DESCRIPTION": "Односторінковий застосунок, у якому весь контент завантажується без перезавантаження сторінки.",
       "DESCRIPTION_SHORT": "Багатомовне SPA-портфоліо з анімаціями, фільтрацією та синхронізацією контенту. Створено з акцентом на UI/UX, кастомний функціонал та візуалізацію навичок.",
@@ -87,6 +88,7 @@
     },
     "WOT_BLITZ_STATISTICS": {
       "TITLE": "WoT Blitz Statistics",
+      "SHORT_TITLE": "WoT Blitz Stats",
       "TYPE": "Тип проєкту: WoT Blitz Statistics",
       "TYPE_DESCRIPTION": "Односторінковий застосунок, у якому весь контент завантажується без перезавантаження сторінки.",
       "DESCRIPTION_SHORT": "Трекер статистики WoT Blitz із розширеними метриками, аналізом сесій, рейтингами та підтримкою кількох мов.",
@@ -101,6 +103,7 @@
     },
     "WEATHER_FORECAST": {
       "TITLE": "Прогноз погоди",
+      "SHORT_TITLE": "Погода",
       "TYPE": "Тип проєкту: SPA",
       "TYPE_DESCRIPTION": "Односторінковий застосунок, у якому весь контент завантажується без перезавантаження сторінки.",
       "DESCRIPTION_SHORT": "Інтерактивний додаток прогнозу погоди з геолокацією, погодинною розбивкою та адаптивним інтерфейсом.",
@@ -114,6 +117,7 @@
     },
     "JS_SLIDER": {
       "TITLE": "JS Слайдер",
+      "SHORT_TITLE": "JS Слайдер",
       "TYPE": "Тип проєкту: UI-компонент",
       "TYPE_DESCRIPTION": "Повторно використовуваний візуальний компонент (наприклад, слайдер або картка), призначений для вбудовування в інші проєкти.",
       "DESCRIPTION_SHORT": "Кастомний адаптивний слайдер на чистому JavaScript зі свайпами, автопрокруткою та навігацією.",
@@ -127,6 +131,7 @@
     },
     "GRID_TEMPLATE": {
       "TITLE": "Grid Template",
+      "SHORT_TITLE": "Grid Template",
       "TYPE": "Тип проєкту: Landing Page",
       "TYPE_DESCRIPTION": "Односторінковий сайт або промо-сторінка з акцентом на візуал і презентацію, зазвичай без логіки.",
       "DESCRIPTION_SHORT": "Шаблон лендінгу з адаптивною сіткою на CSS Grid і меню-бургером для мобільних пристроїв.",
@@ -140,6 +145,7 @@
     },
     "CRUD_MATERIAL": {
       "TITLE": "CRUD with Angular Material",
+      "SHORT_TITLE": "Angular Material CRUD",
       "TYPE": "Тип проєкту: CRUD",
       "TYPE_DESCRIPTION": "Застосунок з операціями створення, читання, оновлення та видалення даних.",
       "DESCRIPTION_SHORT": "Сучасний CRUD-додаток на Angular 20 з Angular Material, рольовим доступом і public/sandbox каталогами на Firestore.",
@@ -153,6 +159,7 @@
     },
     "KINOZAL": {
       "TITLE": "Kinozal",
+      "SHORT_TITLE": "Kinozal",
       "TYPE": "Тип проєкту: Template",
       "TYPE_DESCRIPTION": "Готовий макет або навчальний шаблон без активної логіки. Використовується для демонстрації верстки.",
       "DESCRIPTION_SHORT": "Навчальний шаблон сайту онлайн-кінотеатру на Bootstrap 5 з адаптивною версткою та темізацією через SCSS.",
@@ -166,6 +173,7 @@
     },
     "MOVIE_SEARCH": {
       "TITLE": "Movie Search",
+      "SHORT_TITLE": "Movie Search",
       "TYPE": "Тип проєкту: SPA",
       "TYPE_DESCRIPTION": "Односторінковий застосунок, у якому весь контент завантажується без перезавантаження сторінки.",
       "DESCRIPTION_SHORT": "SPA для пошуку фільмів з використанням OMDb API, динамічною генерацією DOM та адаптивним інтерфейсом на SCSS.",
@@ -179,6 +187,7 @@
     },
     "CRUD_BOOTSTRAP": {
       "TITLE": "CRUD with Bootstrap",
+      "SHORT_TITLE": "Bootstrap CRUD",
       "TYPE": "Тип проєкту: CRUD",
       "TYPE_DESCRIPTION": "Застосунок з операціями створення, читання, оновлення та видалення даних.",
       "DESCRIPTION_SHORT": "Angular CRUD-додаток для керування користувачами з Bootstrap 5, Reactive Forms і Firestore-синхронізацією.",
@@ -192,6 +201,7 @@
     },
     "CURRENCY_CONVERTER": {
       "TITLE": "Конвертер валют",
+      "SHORT_TITLE": "Конвертер валют",
       "TYPE": "Тип проєкту: SPA",
       "TYPE_DESCRIPTION": "Односторінковий застосунок, у якому весь контент завантажується без перезавантаження сторінки.",
       "DESCRIPTION_SHORT": "Мінімалістичний Angular-конвертер валют з Tailwind CSS, signals та актуальними курсами НБУ.",
