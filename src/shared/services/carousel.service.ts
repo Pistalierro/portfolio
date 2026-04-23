@@ -32,15 +32,17 @@ export class CarouselService {
     this.onSlideChange = onSlideChange;
   }
 
-  playCarousel() {
-    if (this.autoPlayIntervalId) return;
-
-    this.autoPlayIntervalId = setInterval(() => {
-      const nextIndex = (this.activeSlide + 1) % this.SLIDES_LENGTH;
-      this.autoSlideTo(nextIndex, 'right');
-    }, this.slideInterval);
+  playCarousel(immediate = false) {
+    if (this.autoPlayIntervalId || this.SLIDES_LENGTH <= 1) return;
 
     this.isPlaying = true;
+
+    if (immediate) {
+      const nextIndex = (this.activeSlide + 1) % this.SLIDES_LENGTH;
+      this.autoSlideTo(nextIndex, 'right');
+    }
+
+    this.startAutoPlayInterval();
   }
 
   pauseCarousel() {
@@ -52,7 +54,7 @@ export class CarouselService {
   }
 
   toggleCarousel() {
-    this.isPlaying ? this.pauseCarousel() : this.playCarousel();
+    this.isPlaying ? this.pauseCarousel() : this.playCarousel(true);
   }
 
   nextSlide() {
@@ -156,6 +158,13 @@ export class CarouselService {
 
   private autoSlideTo(index: number, direction: 'left' | 'right') {
     this.goToSlide(index, direction);
+  }
+
+  private startAutoPlayInterval(): void {
+    this.autoPlayIntervalId = setInterval(() => {
+      const nextIndex = (this.activeSlide + 1) % this.SLIDES_LENGTH;
+      this.autoSlideTo(nextIndex, 'right');
+    }, this.slideInterval);
   }
 
   private goToSlide(index: number, direction: 'left' | 'right') {
