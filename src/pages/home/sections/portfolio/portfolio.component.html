@@ -18,16 +18,18 @@
           <!-- Каждая миниатюра -->
           <div #thumb (click)="setActiveSlide(i)" *ngFor="let project of projectPreviews; let i = index"
                [ngClass]="{
-              'outline-accent outline-2 z-10': i === activeSlide,
-              'outline-0': i !== activeSlide
+              'border-accent z-10 shadow-[0_0_16px_rgba(249,115,22,0.2)]': i === activeSlide,
+              'border-transparent': i !== activeSlide
             }"
-               class=" relative flex flex-col items-center cursor-pointer flex-shrink-0 transition-all duration-300 ease-in-out hover:scale-105 outline outline-offset-0 rounded-md w-[120px] h-[90px] md:h-[120px] md:w-[180px] lg:w-full lg:h-auto">
-            <div class="w-full mb-1 h-[80px] md:h-[120px] overflow-hidden rounded">
+               class="relative cursor-pointer flex-shrink-0 transition-all duration-300 ease-in-out hover:scale-105 rounded-md border-2 w-[120px] md:w-[180px] lg:w-full p-1 bg-black/20">
+            <div class="relative w-full h-[80px] md:h-[120px] lg:h-[110px] overflow-hidden rounded">
               <img [alt]="project.title" [src]="project.images.thumbnail" class="w-full h-full object-cover"/>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent px-2 py-1.5">
+                <p class="w-full text-center text-white truncate text-xs md:text-sm leading-tight">
+                  {{ getPreviewTitle(project) | translate }}
+                </p>
+              </div>
             </div>
-            <p class="text-center text-white truncate w-full text-sm md:text-base">
-              {{ project.title | translate }}
-            </p>
           </div>
         </div>
       </div>

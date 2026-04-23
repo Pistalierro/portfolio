@@ -87,6 +87,10 @@ export class PortfolioComponent implements AfterViewInit, OnDestroy {
     this.carouselService.setActiveSlide(index);
   }
 
+  getPreviewTitle(project: ProjectPreviewInterface): string {
+    return project.shortTitle || project.title;
+  }
+
   private initCarousel(): void {
     this.carouselService.init(this.SLIDES_LENGTH, (index, direction) => {
       this.infoVisible = false;
