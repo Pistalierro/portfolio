@@ -99,7 +99,7 @@ export const PROJECTS: ProjectDetailedInterface[] = [
       'Animations',
       'ngx-translate'
     ],
-    tools: ['WebStorm', 'Material UI', 'GitHub'],
+    tools: ['WebStorm', 'Angular Material', 'GitHub'],
     images: {
       thumbnail: '/img/projects/wot_blitz_statistics_thumbnail.webp',
       large: '/img/projects/wot_blitz_statistics_large.webp',

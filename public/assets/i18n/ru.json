@@ -139,7 +139,7 @@
       }
     },
     "CRUD_MATERIAL": {
-      "TITLE": "CRUD with Material UI",
+      "TITLE": "CRUD with Angular Material",
       "TYPE": "Тип проекта: CRUD",
       "TYPE_DESCRIPTION": "Приложение с операциями создания, чтения, обновления и удаления данных.",
       "DESCRIPTION_SHORT": "Современное CRUD-приложение на Angular 20 с Angular Material, ролевым доступом и public/sandbox каталогами в Firestore.",
@@ -279,8 +279,8 @@
         "DESCRIPTION": "Gulp — применяю для автоматизации сборки проектов: минификация, компиляция SCSS, оптимизация изображений и другие задачи."
       },
       "MATERIAL_UI": {
-        "TITLE": "Material UI",
-        "DESCRIPTION": "Material UI — использую готовые компоненты для создания понятного и структурированного UI в проектах на Angular."
+        "TITLE": "Angular Material",
+        "DESCRIPTION": "Angular Material — использую готовые компоненты для создания понятного и структурированного UI в проектах на Angular."
       },
       "BEM": {
         "TITLE": "BEM",

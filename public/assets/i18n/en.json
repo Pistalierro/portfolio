@@ -139,7 +139,7 @@
       }
     },
     "CRUD_MATERIAL": {
-      "TITLE": "CRUD with Material UI",
+      "TITLE": "CRUD with Angular Material",
       "TYPE": "Project Type: CRUD",
       "TYPE_DESCRIPTION": "An application with create, read, update, and delete operations.",
       "DESCRIPTION_SHORT": "Modern Angular 20 CRUD app with Angular Material, role-based access, and Firestore-backed public/sandbox catalogs.",
@@ -279,8 +279,8 @@
         "DESCRIPTION": "I use Gulp to automate project builds: minification, SCSS compilation, image optimization, and other tasks."
       },
       "MATERIAL_UI": {
-        "TITLE": "Material UI",
-        "DESCRIPTION": "I use ready-made Material UI components to build clear and structured interfaces in Angular projects."
+        "TITLE": "Angular Material",
+        "DESCRIPTION": "I use ready-made Angular Material components to build clear and structured interfaces in Angular projects."
       },
       "BEM": {
         "TITLE": "BEM",

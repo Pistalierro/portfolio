@@ -139,7 +139,7 @@
       }
     },
     "CRUD_MATERIAL": {
-      "TITLE": "CRUD with Material UI",
+      "TITLE": "CRUD with Angular Material",
       "TYPE": "Тип проєкту: CRUD",
       "TYPE_DESCRIPTION": "Застосунок з операціями створення, читання, оновлення та видалення даних.",
       "DESCRIPTION_SHORT": "Сучасний CRUD-додаток на Angular 20 з Angular Material, рольовим доступом і public/sandbox каталогами на Firestore.",
@@ -279,8 +279,8 @@
         "DESCRIPTION": "Gulp застосовую для автоматизації збірки проєктів: мініфікація, компіляція SCSS, оптимізація зображень та інші задачі."
       },
       "MATERIAL_UI": {
-        "TITLE": "Material UI",
-        "DESCRIPTION": "Material UI використовую для створення зрозумілого та структурованого інтерфейсу на Angular, використовуючи готові компоненти."
+        "TITLE": "Angular Material",
+        "DESCRIPTION": "Angular Material використовую для створення зрозумілого та структурованого інтерфейсу на Angular, використовуючи готові компоненти."
       },
       "BEM": {
         "TITLE": "BEM",
